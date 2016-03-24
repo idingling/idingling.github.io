@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3.1]]></item>
+	<item id="Time"><![CDATA[2015-05-01 23:55]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://127.0.0.1/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[【CSU】外链本地打开]]></item>
+			<item id="identifier"><![CDATA[localurl]]></item>
+			<item id="description"><![CDATA[商业版功能：1.支持外链替换字符2.支持黑名单3.支持设置外链属性4.支持外链界面美化]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[localurl/]]></item>
+			<item id="copyright"><![CDATA[Coder Student Union]]></item>
+			<item id="version"><![CDATA[1.0.0]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[more]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[高级设置]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[hook]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,X3.5,X4]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[白名单]]></item>
+				<item id="description"><![CDATA[每行一个，可以单独设置子域名或者顶级域名
+如：www.dzcsu.com，只匹配www.dzcsu.com
+如：*.dzcsu.com，则匹配dzcsu.com的所有子域以及dzcsu.com]]></item>
+				<item id="variable"><![CDATA[white]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[*.dzcsu.com]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[开启的用户组]]></item>
+				<item id="description"><![CDATA[以下用户组点击外链会在本地打开]]></item>
+				<item id="variable"><![CDATA[groups]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[9]]></item>
+					<item id="1"><![CDATA[10]]></item>
+					<item id="2"><![CDATA[11]]></item>
+					<item id="3"><![CDATA[12]]></item>
+					<item id="4"><![CDATA[13]]></item>
+					<item id="5"><![CDATA[14]]></item>
+					<item id="6"><![CDATA[15]]></item>
+					<item id="7"><![CDATA[20]]></item>
+					<item id="8"><![CDATA[16]]></item>
+					<item id="9"><![CDATA[17]]></item>
+					<item id="10"><![CDATA[18]]></item>
+					<item id="11"><![CDATA[19]]></item>
+					<item id="12"><![CDATA[1]]></item>
+					<item id="13"><![CDATA[2]]></item>
+					<item id="14"><![CDATA[3]]></item>
+					<item id="15"><![CDATA[4]]></item>
+					<item id="16"><![CDATA[5]]></item>
+					<item id="17"><![CDATA[6]]></item>
+					<item id="18"><![CDATA[7]]></item>
+					<item id="19"><![CDATA[8]]></item>
+				</item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[开启的版块]]></item>
+				<item id="description"><![CDATA[以下版块的帖子的外链会在本地打开]]></item>
+				<item id="variable"><![CDATA[forums]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[2]]></item>
+					<item id="1"><![CDATA[37]]></item>
+				</item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[链接编码方式]]></item>
+				<item id="description"><![CDATA[base64加密方法，看不出原始链接，但比较乱
+urlencode相对整洁点，看得出原始链接]]></item>
+				<item id="variable"><![CDATA[encode]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[base64]]></item>
+				<item id="extra"><![CDATA[base64 = base64
+urlencode = urlencode]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[是否开启伪静态]]></item>
+				<item id="description"><![CDATA[伪静态组件购买地址：http://addon.discuz.com/?@localurl.plugin.50085]]></item>
+				<item id="variable"><![CDATA[rewrite]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[伪静态格式]]></item>
+				<item id="description"><![CDATA[{$url}为外链，可以替换，启用伪静态只支持base64]]></item>
+				<item id="variable"><![CDATA[rule]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[url-{$url}.html]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="0"><![CDATA[点击此链接测试插件效果]]></item>
+				<item id="1"><![CDATA[检测到当前未购买伪静态组件，点击此处购买伪静态组件]]></item>
+				<item id="2"><![CDATA[点击此链接查看伪静态规则]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="1"><![CDATA[返回首页]]></item>
+				<item id="0"><![CDATA[作者:Dzcsu]]></item>
+			</item>
+		</item>
+	</item>
+</root>

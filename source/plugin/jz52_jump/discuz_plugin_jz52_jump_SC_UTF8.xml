@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3.1]]></item>
+	<item id="Time"><![CDATA[2014-05-03 12:03]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://127.0.0.1/11/22/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[0]]></item>
+			<item id="name"><![CDATA[极致 自由跳转]]></item>
+			<item id="identifier"><![CDATA[jz52_jump]]></item>
+			<item id="description"><![CDATA[自由的设置论坛的某个页面跳转
+如： a→b  当访问a页面时会自动跳转到页面b]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[jz52_jump/]]></item>
+			<item id="copyright"><![CDATA[极致 QQ393988832]]></item>
+			<item id="version"><![CDATA[1.0]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[jump]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5,X3,X3.1]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[跳转内容]]></item>
+				<item id="description"><![CDATA[格式：
+http://aaa.aaa|http://bbb.bbb
+一行一跳转 使用绝对地址 区分大小写]]></item>
+				<item id="variable"><![CDATA[Jz_JumpBody]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[http://127.0.0.1/forum.php?mod=forumdisplay&fid=2|http://baidu.com
+http://127.0.0.1/home.php?mod=task|http://qq.com]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[跳转方式]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[Jz_JumpMode]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1 = 直接跳转
+2 = 延时跳转]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[延迟时间]]></item>
+				<item id="description"><![CDATA[延迟跳转时间 单位为毫秒]]></item>
+				<item id="variable"><![CDATA[Jz_Jumpyc]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1000]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[不跳的用户组]]></item>
+				<item id="description"><![CDATA[选中的用户组不跳转]]></item>
+				<item id="variable"><![CDATA[Jz_JumpUser]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+	</item>
+</root>

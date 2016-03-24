@@ -1,0 +1,123 @@
+<!--{template common/header}-->
+<link href="source/plugin/qu_ranklist/css/style.css" rel="stylesheet" type="text/css" />
+
+<div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em><a href="forum.php">{$_G[setting][navs][2][navname]}</a><em>&raquo;</em><a href="plugin.php?id=qu_ranklist:ranklist">{lang qu_ranklist:name}</a>
+	</div>
+</div>
+
+<div class="wrapContent cl">
+	<div class="wrapMain11">
+		<div class="list_zuo">
+			<ul class="list_tab">
+				<li {if $_GET['type'] == 'credits' || $_GET['type'] == ''}class="on"{/if}><a href="plugin.php?id=qu_ranklist:ranklist&type=credits" {if $_GET['type'] == 'credits' || $_GET['type'] == ''}class="tab-on3"{else}class="list_tab_good"{/if}>{lang qu_ranklist:lang01}</a></li>
+                <li {if $_GET['type'] == 'posts'}class="on"{/if}><a href="plugin.php?id=qu_ranklist:ranklist&type=posts" {if $_GET['type'] == 'posts'}class="tab-on4"{else}class="list_tab_hot"{/if}>{lang qu_ranklist:lang02}</a></li>
+                <li {if $_GET['type'] == 'threads'}class="on"{/if}><a href="plugin.php?id=qu_ranklist:ranklist&type=threads" {if $_GET['type'] == 'threads'}class="tab-on"{else}class="list_tab_dengji"{/if}>{lang qu_ranklist:lang03}</a></li>
+          		<li {if $_GET['type'] == 'friends'}class="on"{/if}><a href="plugin.php?id=qu_ranklist:ranklist&type=friends" {if $_GET['type'] == 'friends'}class="tab-on2"{else}class="list_tab_fensi"{/if}>{lang qu_ranklist:lang04}</a></li>
+			</ul>
+			<div class="list_weather"> <span class="tips"></span>
+				<!--{if $_GET['type'] == 'credits' || $_GET['type'] == ''}-->
+                	<p>{lang qu_ranklist:lang05}</p>
+                <!--{elseif $_GET[type] == 'posts'}-->
+                	<p>{lang qu_ranklist:lang06}</p>
+				<!--{elseif $_GET[type] == 'threads'}-->
+                	<p>{lang qu_ranklist:lang07}</p>
+				<!--{elseif $_GET[type] == 'friends'}-->
+                	<p>{lang qu_ranklist:lang08}</p>
+				<!--{/if}-->
+			</div>
+      </div>
+      <div class="list_box" id="list_box1">
+        <div class="list_top">
+          <div class="list_left"> <span class="like"></span> </div>
+          <!--{if $_G[uid]}-->
+              <!--{if $_GET['type'] == 'credits' || $_GET['type'] == ''}-->
+              	<div class="tit">{lang qu_ranklist:lang09}<span>$_G['member']['credits']</span>{lang qu_ranklist:lang13}<em>$now_pos</em></div>
+              <!--{elseif $_GET[type] == 'posts'}-->
+              	<div class="tit">{lang qu_ranklist:lang10}<span>$myposts</span>{lang qu_ranklist:lang13}<em>$now_posts</em></div>
+              <!--{elseif $_GET[type] == 'threads'}-->
+              	<div class="tit">{lang qu_ranklist:lang11}<span>$mythreads</span>{lang qu_ranklist:lang13}<em>$now_threads</em></div>
+              <!--{elseif $_GET[type] == 'friends'}-->
+              	<div class="tit">{lang qu_ranklist:lang12}<span>$myfriends</span>{lang qu_ranklist:lang13}<em>$now_friends</em></div>
+              <!--{/if}-->
+          <!--{else}-->
+          <div class="tit">{lang qu_ranklist:lang14}</div>
+          <!--{/if}-->
+        </div>
+
+<div class="cl" style="position:relative;">
+	<!--{loop $ranklist $key $qu_ranklist}-->
+		<!--{if $key < 3}-->
+		<!--{eval $qkey = $key + 1;}-->
+		<div class="list_module{$qkey}">
+			<div class="list_tuzi list_tuzi{$qkey}">
+            	<a href="home.php?mod=space&uid=$qu_ranklist[uid]" target="_blank" class="aimg">{echo avatar($qu_ranklist[uid],middle)}</a>
+                <span class="list_digital_$qkey">{$qkey}</span>
+                <div class="list_right list_right{$qkey}">
+                    <h2><a href="home.php?mod=space&uid=$qu_ranklist[uid]" target="_blank">$qu_ranklist[username]</a></h2>
+                    <div class="index_rightsmall">                        
+                        <!--{if $_GET[type] == 'credits' || $_GET['type'] == ''}-->
+                        	<div class="txt">{lang qu_ranklist:lang15}: $qu_ranklist[credits]</div>
+						<!--{/if}-->
+                    	<!--{if $_GET[type] == 'posts'}-->
+                            <div class="list_hot">{lang qu_ranklist:lang16}: $qu_ranklist[posts]</div>
+						<!--{/if}-->
+                        <!--{if $_GET[type] == 'threads'}-->
+                            <div class="txt">{lang qu_ranklist:lang17}: $qu_ranklist[threads]</div>
+						<!--{/if}-->
+                        <!--{if $_GET[type] == 'friends'}-->
+                            <div class="txt">{lang qu_ranklist:lang18}: $qu_ranklist[friends]</div>
+						<!--{/if}-->
+                    </div>
+                    <!--{if $_GET[type] != 'friends'}-->
+                        <!--{if $qu_ranklist[groupid] < 4}-->
+                            <img src="source/plugin/qu_ranklist/css/level/100.gif" />
+                        <!--{else}-->
+                            <img src="source/plugin/qu_ranklist/css/level/{eval echo intval(($qu_ranklist[credits]/100)+1);}.gif" />
+                        <!--{/if}-->
+                    <!--{/if}-->
+                    <!--{if $_GET[type] == 'friends'}-->
+                    	<div class="index_jiaguanzhu1"><a href="home.php?mod=spacecp&ac=friend&op=add&uid=$qu_ranklist[uid]&handlekey=addfriendhk_{$qu_ranklist[uid]}" id="a_friend_li_{$qu_ranklist[uid]}" onclick="showWindow(this.id, this.href, 'get', 0);"><b>+</b> {lang qu_ranklist:lang19}</a></div>
+                    <!--{/if}-->
+                </div>
+			</div>
+		</div>
+         
+		<!--{else}-->
+        <div class="list_con_ul list_con_ul{$key} cl" {if {$key} % 2 == 0}style="border-right:none;"{/if}>
+            <div class="list_con_li cl">
+                <span class="list_con_number"><em>{eval echo $key+1;}</em></span>
+                <span class="index_leftsmall"><a href="home.php?mod=space&uid=$qu_ranklist[uid]" target="_blank">{echo avatar($qu_ranklist[uid],small)}</a></span>
+                <span class="list_con_text"><a href="home.php?mod=space&uid=$qu_ranklist[uid]" target="_blank">$qu_ranklist[username]</a></span>
+                <!--{if $_GET[type] == 'credits' || $_GET['type'] == ''}-->
+                    <!--{if $qu_ranklist[groupid] < 4}-->
+                        <div class="list_con_dengji"><img src="source/plugin/qu_ranklist/css/level/100.gif" /></div>
+                    <!--{else}-->
+                        <div class="list_con_dengji"><img src="source/plugin/qu_ranklist/css/level/{eval echo intval(($qu_ranklist[credits]/100)+1);}.gif" /></div>
+                    <!--{/if}-->
+                <!--{/if}-->
+                <!--{if $_GET[type] == 'friends'}-->
+                    <div class="index_jiaguanzhu2"><a href="home.php?mod=spacecp&ac=friend&op=add&uid=$qu_ranklist[uid]&handlekey=addfriendhk_{$qu_ranklist[uid]}" id="a_friend_li_{$qu_ranklist[uid]}" onclick="showWindow(this.id, this.href, 'get', 0);"><b>+</b> {lang qu_ranklist:lang19}</a></div>
+                <!--{/if}-->
+                <div class="list_rightsmall">
+                    <!--{if $_GET[type] == 'credits' || $_GET['type'] == ''}--><div class="txt">{lang qu_ranklist:lang15}: $qu_ranklist[credits]</div><!--{/if}-->
+                    <!--{if $_GET[type] == 'posts'}--><div class="txt">{lang qu_ranklist:lang16}: $qu_ranklist[posts]</div><!--{/if}-->
+                    <!--{if $_GET[type] == 'threads'}--><div class="txt">{lang qu_ranklist:lang17}: $qu_ranklist[threads]</div><!--{/if}-->
+                    <!--{if $_GET[type] == 'friends'}--><div class="txt">{lang qu_ranklist:lang18}: $qu_ranklist[friends]</div><!--{/if}-->
+                </div>
+
+            </div>
+        </div>
+		<!--{/if}-->
+	<!--{/loop}-->
+</div>
+
+
+        
+      </div>
+    </div>
+  </div>
+
+
+<!--{template common/footer}-->

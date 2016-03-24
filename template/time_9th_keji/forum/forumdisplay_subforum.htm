@@ -1,0 +1,33 @@
+
+<div class="subforum cl mt15" style="padding: 0; margin: 0 0 10px 0;">
+  <div class="forum_hd cl">
+    <h2>{lang forum_subforums}</h2>
+  </div>
+  <div id="subforum_{$_G[forum][fid]}">
+    <ul>
+      <!--{loop $sublist $sub}--> 
+      <!--{eval $forumurl = !empty($sub['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$sub['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?mod=forumdisplay&fid='.$sub['fid'];}-->
+      
+      <li class="cl"> 
+        
+        <!-- Í¼±ê -->
+        <div class="subforum-icn"> 
+          <!--{if $sub[icon]}--> 
+          $sub[icon] 
+          <!--{else}--> 
+          <a href="$forumurl"{if $sub[redirect]} target="_blank"{/if}><img src="{IMGDIR}/forum{if $sub[folder]}_new{/if}.gif" alt="$sub[name]" /></a> 
+          <!--{/if}--> 
+        </div>
+        
+        <!-- Ãû³Æ -->
+        <h3><a href="$forumurl" {if !empty($sub[redirect])}target="_blank"{/if} style="{if !empty($sub[extra][namecolor])}color: {$sub[extra][namecolor]};{/if}">$sub[name]</a><!--{if $sub[todayposts] && !$sub['redirect']}--><em class="xw0 xi1" title="{lang forum_todayposts}"> ($sub[todayposts])</em><!--{/if}--> </h3>
+        
+       <p> <!--{if empty($sub[redirect])}--><em>{lang forum_threads}: <!--{echo dnumber($sub[threads])}--></em>, <em>{lang forum_posts}: <!--{echo dnumber($sub[posts])}--></em><!--{/if}--> </p>
+        
+      </li>
+      
+      <!--{/loop}--> 
+      $_G['forum']['endrows']
+    </ul>
+  </div>
+</div>

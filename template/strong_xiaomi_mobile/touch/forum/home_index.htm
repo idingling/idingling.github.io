@@ -1,0 +1,74 @@
+<!--{template common/header}-->
+<script src="./template/strong_xiaomi_mobile/touch/TSlide.js"></script>
+		<div class="s_dbdh">
+            <div class="right">
+                <a href="javascript:;" ></a>
+
+            </div>
+            <div class="z left">
+                            <a href="javascript:;" onClick="do_left();" ><img src="./template/strong_xiaomi_mobile/touch/images/g/menu.png" id="main_menuid"/></a>
+            
+            </div>
+            <div class="s_logo">
+                <a href="forum.php" >{echo cutstr(strip_tags($_G['setting']['bbname'] ),12)}</a>
+            </div>
+        
+        </div>
+
+<style type="text/css">
+	.s_footer{ display:none;}
+	.bg,.c_mon{background:#e6e6e6;}
+
+	
+</style>
+<!--{block/162}-->
+<div class="list">
+
+    <div id="slideBox" class="slideBox">
+		<div class="bd">
+			<ul>
+				
+<!--{block/166}-->
+	
+			</ul>
+		</div>
+
+		<div class="hd">
+			<ul></ul>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		TouchSlide({ 
+			slideCell:"#slideBox",
+			titCell:".hd ul", 
+			mainCell:".bd ul", 
+			effect:"leftLoop", 
+			autoPage:true,
+			autoPlay:true 
+		});
+	</script>
+
+    <div class="hot"> 
+        <ul>
+        <!--{block/164}-->
+        </ul><i></i><i></i>
+    </div> 
+  
+</div>
+
+
+
+
+
+<!--{block/155}-->
+<!--{block/156}-->
+<!--{block/157}-->
+<!--{block/159}-->
+<!--{block/158}-->
+<!--{block/161}-->
+<!--{block/780}-->
+<!--{block/782}-->
+<!--{block/783}-->
+
+<!--{template common/footer}-->

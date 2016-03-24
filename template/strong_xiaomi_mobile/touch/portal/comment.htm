@@ -1,0 +1,55 @@
+<!--{template common/header}-->
+<style>
+.c_mon{background:#fff;}
+</style>
+<div class="s_dbdh">
+	<div class="right">
+   	 	<a href="javascript:;" ></a>    
+    </div>
+    <div class="z left">
+   		 <a href="$url" ><img src="./template/strong_xiaomi_mobile/touch/images/g/back.png"/></a>
+    </div>
+    <div class="s_logo">
+    	<a href="forum.php" >{lang comment_view}</a>
+    </div>        
+</div>
+
+
+
+
+
+
+<div class="s-wztop">
+
+		<h1><a href="$url">$csubject[title]</a></h1>
+		<span>{lang comment} ($csubject[commentnum])</span>
+</div>
+
+			<!--{loop $commentlist $comment}-->
+				<!--{template portal/comment_li}-->
+			<!--{/loop}-->
+
+			<div class="pgs cl mtm mbm">$multi</div>
+			<!--{if $csubject['allowcomment'] == 1}-->
+			<div class="potpl_from">
+				<form id="cform" name="cform" action="portal.php?mod=portalcp&ac=comment" method="post" autocomplete="off">
+
+					<textarea name="message"  rows="2" class="s-input-text" id="message" onfocus="if(this.innerHTML='{echo $lang['butubukuai'];}'){this.innerHTML=''};this.style.border='solid 1px #c0c0c0';">{echo $lang['butubukuai'];}</textarea>
+
+					<!--{if $secqaacheck || $seccodecheck}-->
+						<!--{block sectpl}--><sec> <span id="sec<hash>" onclick="showMenu(this.id);"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div><!--{/block}-->
+						<div class="mtm"><!--{subtemplate common/seccheck}--></div>
+					<!--{/if}-->
+
+					<!--{if $idtype == 'topicid' }-->
+						<input type="hidden" name="topicid" value="$id">
+					<!--{else}-->
+						<input type="hidden" name="aid" value="$id">
+					<!--{/if}-->
+					<input type="hidden" name="formhash" value="{FORMHASH}">
+					<p class="ptn"><button type="submit" name="commentsubmit" value="true" style="width:100%; margin-top:10px;" class="button"><strong>{lang comment}</strong></button></p>
+				</form>
+			<!--{/if}-->
+			</div>
+
+<!--{template common/footer}-->

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2]]></item>
+	<item id="Time"><![CDATA[2012-11-07 09:55]]></item>
+	<item id="From"><![CDATA[IT618资讯网 (http://www.cnit618.com/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[it618附件回复可见]]></item>
+			<item id="identifier"><![CDATA[it618_attachdisplay]]></item>
+			<item id="description"><![CDATA[帖子内如有附件，没有可见权限的用户组需要回复帖子指定次数后可见]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[it618_attachdisplay/]]></item>
+			<item id="copyright"><![CDATA[IT618资讯网]]></item>
+			<item id="version"><![CDATA[v1.4]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[attachdisplay]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[help]]></item>
+					<item id="menu"><![CDATA[使用教程与问题反馈]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[请一定要设置的]]></item>
+				<item id="description"><![CDATA[在使用本插件前，请先修改此文件(template/default/forum/viewthread_node_body.htm)，修改教程：http://www.cnit618.com/html/kyxt/dzhack/3028.htm]]></item>
+				<item id="variable"><![CDATA[ad_it618]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[在使用本插件前，请先修改此文件(template/default/forum/viewthread_node_body.htm)，修改教程：http://www.cnit618.com/html/kyxt/dzhack/3028.htm]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[是否包括图片]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ad_isimage]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[回复次数]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ad_postcount]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[附件标题]]></item>
+				<item id="description"><![CDATA[以下附件需要回复 {allcount} 次可见，已回复 {okcount} 次
+
+{allcount}：表示要回复的次数
+{okcount}：表示已回复的次数]]></item>
+				<item id="variable"><![CDATA[ad_title]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[以下附件需要回复 <font color=#F00>{allcount}</font> 次可见，已回复 <font color=#F00>{okcount}</font> 次</font>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[附件列表项内容]]></item>
+				<item id="description"><![CDATA[{id}、{filename} {filesize} 已下载 {downcount} 次
+
+{id}：表示序号
+{filename}：表示附件名称
+{filesize}：表示附件大小
+{downcount}：表示附件下载次数]]></item>
+				<item id="variable"><![CDATA[ad_listtitle]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[{id}、{filename} <font color=#ccc>{filesize} 已下载 {downcount} 次</font>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[版块权限]]></item>
+				<item id="description"><![CDATA[有权限的版块才有附件回复可见功能]]></item>
+				<item id="variable"><![CDATA[ad_forums]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[2]]></item>
+				</item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[用户组可见权限]]></item>
+				<item id="description"><![CDATA[有权限的用户组不用回复就直接可以看到附件]]></item>
+				<item id="variable"><![CDATA[ad_usergroups]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[1]]></item>
+				</item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[支持码]]></item>
+				<item id="description"><![CDATA[支持码填写了就不显示IT618资讯网版权。支持码：http://www.cnit618.com
+
+如果你想让IT618资讯网有人气，让更多的站长知道。就不填写支持码，谢谢。]]></item>
+				<item id="variable"><![CDATA[code]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[http://www.cnit618.com]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="it618_lang1"><![CDATA[、]]></item>
+				<item id="it618_lang2"><![CDATA[ 已下载]]></item>
+				<item id="it618_lang2"><![CDATA[次]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="it618_copyright"><![CDATA[插件设计：<a href="http://www.cnit618.com" target="_blank" title="为站长解决问题的网站">IT618资讯网</a>]]></item>
+				<item id="it618_lang1"><![CDATA[以下附件需要回复]]></item>
+				<item id="it618_lang2"><![CDATA[次可见，已回复]]></item>
+				<item id="it618_lang3"><![CDATA[次]]></item>
+			</item>
+
+		</item>
+	</item>
+</root>

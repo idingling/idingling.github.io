@@ -1,0 +1,23 @@
+.wp { width: 1140px}
+body { background: #F2F2F2}
+.mn { background: #FFFFFF}
+.ct1 { border: 0}
+.bm_c { padding: 5px 3px 20px 5px}
+#pt { padding: 5px 0}
+.pn strong { line-height: 22px}
+
+.tb_1 a { display: block;padding: 0px 6px;font-size: 14px;margin: 0px 10px}
+
+#uhd .avt img { padding: 3px; border: 1px solid #EEEEEE}
+.space_nav { background: #FFFFFF}
+.space_nav .tb_1 li { float: left}
+.space_nav .tb_1 { margin:0 20px 20px; line-height:40px;border-bottom: none;background: #FAFAFA}
+.space_nav .tb_1 img { margin-right:10px;}
+.space_nav .tb_1 a { padding: 0 8px; border-radius:0;text-decoration: none; border: 0; color: #777777}
+.space_nav .tb_1 em { font-size: 12px;color: #AAAAAA}
+.space_nav .tb_1 .a a { background: #FFF;border:none; border-top: 2px solid #00AA98;line-height: 36px; color: #00AA98; font-weight:100;}
+.space_nav .tb_1 .a em, .home_nav .tb_1 a:hover em { color: #00AA98}
+
+
+.space_nav .tb_1 img { margin-right: 10px}
+.vm { vertical-align: middle}

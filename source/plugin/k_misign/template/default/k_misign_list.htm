@@ -1,0 +1,47 @@
+{subtemplate common/header}
+<div class="left_tit">
+	<ul class="paihang J_phbtn cl">
+		<li {if $_GET['op'] == ''}class="active"{/if}><a href="javascript:;" onclick="ajaxget('{$setting['pluginurl']}sign&operation=list', 'ranklist')">{lang k_misign:ranklist_today}</a></li>
+        <li {if $_GET['op'] == 'month'}class="active"{/if}><a href="javascript:;" onclick="ajaxget('{$setting['pluginurl']}sign&operation=list&op=month', 'ranklist')">{lang k_misign:ranklist_month}</a></li>
+        <li {if $_GET['op'] == 'zong'}class="active"{/if}><a href="javascript:;" onclick="ajaxget('{$setting['pluginurl']}sign&operation=list&op=zong', 'ranklist')">{lang k_misign:ranklist_zong}</a></li>
+		<!--{if $setting['rewardlistopen']}--><li {if $_GET['op'] == 'rewardlist'}class="active"{/if}><a href="javascript:;" onclick="ajaxget('{$setting['pluginurl']}sign&operation=list&op=rewardlist', 'ranklist')">{lang k_misign:ranklist_reward}</a></li><!--{/if}--> 
+	</ul>
+</div>
+<div class="arr_detail">
+	<table id="J_list_detail">
+		<tbody>
+		<tr>
+            <th>{lang k_misign:ranklist_nickname}</th>
+            <th style="width:70px;">{lang k_misign:ranklist_days}</th>
+            <th style="width:70px;">{lang k_misign:ranklist_monthdays}</th>
+            <th style="width:150px;">{lang k_misign:ranklist_lasttime}</th>
+            <th style="width:120px;">{lang k_misign:ranklist_nowlevel}</th>
+            <!--{if $_GET['op'] == '' || $_GET['op'] == 'month' || $_GET['op'] == 'zong'}-->
+            <th style="width:80px;">{lang k_misign:ranklist_lastreward}</th>
+        	<!--{elseif $_GET['op'] == 'rewardlist'}-->
+            <th style="width:80px;">{lang k_misign:ranklist_rewards}</th>
+        	<!--{/if}-->            
+		</tr>
+        <!--{if $mrcs}-->
+        <!--{loop $mrcs $mrc}-->
+		<tr>
+            <td><div style="width:160px;display: inline-block;"><a href="home.php?mod=space&uid=$mrc[uid]" target="_blank">$mrc[username]</a></div></td>
+            <td>{$mrc[days]}</td>
+            <td>{$mrc[mdays]}</td>
+            <td>{$mrc[time]}</td>
+            <td>{$mrc['level']}</td>
+            <!--{if $_GET['op'] == '' || $_GET['op'] == 'month' || $_GET['op'] == 'zong'}-->
+            <td>{$mrc['lastreward']} {$_G['setting']['extcredits'][$setting[nrcredit]]['unit']}{$_G['setting']['extcredits'][$setting[nrcredit]]['title']}</td>
+        	<!--{elseif $_GET['op'] == 'rewardlist'}-->
+            <td>{$mrc['reward']} {$_G['setting']['extcredits'][$setting[nrcredit]]['unit']}{$_G['setting']['extcredits'][$setting[nrcredit]]['title']}</td>
+        	<!--{/if}-->   
+        </tr>
+        <!--{/loop}-->
+		<!--{if !empty($multipage)}--><tr><td colspan="8"><div class="btns">$multipage</div></td></tr><!--{/if}-->
+        <!--{else}-->
+		<tr><td colspan="9">{lang k_misign:noinfo}</td></tr>
+        <!--{/if}-->
+		</tbody>
+	</table>
+</div>
+{subtemplate common/footer}

@@ -1,0 +1,395 @@
+<!--{block return}-->
+<!--{if $_G['basescript'] != 'userapp'}-->
+<style type="text/css"> 
+#scrolltop {
+   display: none;
+}
+ul#navmenu ul
+{ 
+display: none; 
+position: absolute; 
+left: -233px;
+bottom: 5px;
+} 
+ul#navmenu li:hover ul ul, 
+ul#navmenu li.iehover ul ul,  { 
+display: none; 
+} 
+ul#navmenu li:hover ul, 
+ul#navmenu ul li:hover ul, 
+ul#navmenu ul ul li:hover ul, 
+ul#navmenu li.iehover ul, 
+ul#navmenu ul li.iehover ul, 
+ul#navmenu ul ul li.iehover ul { 
+display: block; 
+} 
+<!--{if $this->jz52_temp != 5 && $this->jz52_temp != 7}-->
+#jz52top a {margin: 6px 0;}
+<!--{/if}-->
+
+<!--{if $this->jz52_thew == 1}-->
+#jz52top { visibility: visible; right: 10px; }
+<!--{else}-->
+#jz52top { z-index: 200; visibility: visible; right: 50%; margin-right: -{$jz52w}px; }
+<!--{/if}-->
+#jz52topa { visibility: hidden;}
+
+#jz52top, #jz52top a { border: none;}
+
+#jz52top { position: fixed; bottom: 40px; display: block; width: 40px; background: none repeat scroll 0% 0% transparent; border: 0px #cdcdcd solid; border-radius: 3px; border-top: 0; cursor: pointer; }
+			#jz52top:hover { text-decoration: none; }
+<!--{if $this->jz52_temp == 1}-->
+#jz52top a { display: block; width: 40px; height: 40px; padding: 0; line-height: 12px; text-align: center; color: #787878; text-decoration: none; background: #f8f8f8 url('source/plugin/jz52_top/template/jz52top1.png') no-repeat 0 0; border-top: 0px #cdcdcd solid; }
+<!--{elseif $this->jz52_temp == 2}-->
+#jz52top a { display: block; width: 40px; height: 40px; padding: 0; line-height: 12px; text-align: center; color: #787878; text-decoration: none; background: #00a398 url('source/plugin/jz52_top/template/jz52top.png') no-repeat 0 0; border-top: 0px #cdcdcd solid; }
+<!--{elseif $this->jz52_temp == 3}-->
+#jz52top a { display: block; width: 40px; height: 40px; padding: 0; line-height: 12px; text-align: center; color: #787878; text-decoration: none; background: #7f7f7f url('source/plugin/jz52_top/template/jz52top2.png') no-repeat 0 0; border-top: 0px #cdcdcd solid; }
+<!--{elseif $this->jz52_temp == 4}-->
+#jz52top a { display: block; width: 40px; height: 40px; padding: 0; line-height: 12px; text-align: center; color: #787878; text-decoration: none; background: #7f7f7f url('source/plugin/jz52_top/template/jz52top3.png') no-repeat 0 0; border-top: 0px #cdcdcd solid; }
+<!--{elseif $this->jz52_temp == 5}-->
+#jz52top a { display: block; width: 40px; height: 40px; padding: 0; line-height: 12px; text-align: center; color: #787878; text-decoration: none; background: #fff url('source/plugin/jz52_top/template/jz52top4.png') no-repeat 0 0; border-top: 0px #cdcdcd solid; }
+<!--{elseif $this->jz52_temp == 6}-->
+#jz52top a { display: block; width: 40px; height: 40px; padding: 0; line-height: 12px; text-align: center; color: #787878; text-decoration: none; background: #fff url('source/plugin/jz52_top/template/jz52top5.png') no-repeat 0 0; border-top: 0px #cdcdcd solid; }
+<!--{elseif $this->jz52_temp == 7}-->
+#jz52top a { display: block; width: 40px; height: 40px; padding: 0; line-height: 12px; text-align: center; color: #787878; text-decoration: none; background: #fff url('source/plugin/jz52_top/template/jz52top6.png') no-repeat 0 0; border-top: 0px #cdcdcd solid; }
+<!--{elseif $this->jz52_temp == 8}-->
+#jz52top a { display: block; width: 40px; height: 40px; padding: 0; line-height: 12px; text-align: center; color: #787878; text-decoration: none; background: #fff url('source/plugin/jz52_top/template/jz52top7.png') no-repeat 0 0; border-top: 0px #cdcdcd solid; }
+<!--{/if}-->
+                a.jz52topa:hover { background-position: -40px 0px !important;}
+				a.replyfast { background-position: 0 -40px !important; }
+				a.replyfast:hover { background-position: -40px -40px !important;}
+				a.returnlist { background-position: 0 -80px !important; }
+				a.returnlist:hover { background-position: -40px -80px !important;}
+				a.returnboard { background-position: -80px -240px !important; }
+				a.returnboard:hover { background-position: -120px -240px !important;}
+				a.jzqr { background-position: 0 -120px !important; }
+				a.jzqr:hover { background-position: -40px -120px !important;}
+                a.jzwx { background-position: 0 -320px !important; }
+				a.jzwx:hover { background-position: -40px -320px !important;}					
+				a.jzkf { background-position: -80px 0px !important; }
+				a.jzkf:hover { background-position: -120px -0px !important;}
+				a.jzfx { background-position: -80px -40px !important; }
+				a.jzfx:hover { background-position: -120px -40px !important;}
+				.jzfxn { background: #fff !important; width: 231px !important; height: 260px !important; }
+				a.jzlast { background-position: -80px -80px !important; }
+				a.jzlast:hover { background-position: -120px -80px !important;}
+				a.jznext { background-position: -80px -120px !important; }
+				a.jznext:hover { background-position: -120px -120px !important;}				
+				a.jzsct { background-position: 0px -160px !important; }
+				a.jzsct:hover { background-position: -40px -160px !important;}				
+				a.jzscb { background-position: -80px -160px !important; }
+				a.jzscb:hover { background-position: -120px -160px !important;}				
+				a.jzqqq { background-position: 0px -200px !important; }
+				a.jzqqq:hover { background-position: -40px -200px !important;}				
+				a.jzwo { background-position: -80px -200px !important; }
+				a.jzwo:hover { background-position: -120px -200px !important;}
+				a.jzzdy { background-position: 0px -240px !important; }
+				a.jzzdy:hover { background-position: -40px -240px !important;}
+				a.jzfbzt { background-position: 0px -280px !important; }
+				a.jzfbzt:hover { background-position: -40px -280px !important;}
+
+#jzqrn { background: #fff !important; width: 231px !important; height: 260px !important; }
+#jzqrn { border: 1px solid rgb(210, 210, 210); }
+#jzqrn p {
+    font-size: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+	color: #999;
+    font-family: Microsoft YaHei;
+}
+#jzwon { background: #fff !important; width: 231px !important; height: 260px !important; }
+#jzwon { border: 1px solid rgb(210, 210, 210); }
+#jzfxn { border: 1px solid rgb(210, 210, 210); }
+#jzfxn h3 {
+    height: 23px;
+    background: none repeat scroll 0% 0% rgb(250, 250, 250);
+    border-bottom: 1px solid rgb(236, 236, 236);
+    padding: 10px 0px 0px 10px;
+}
+#jzfxn .bdsharebuttonbox { padding: 13px 0px 0px 20px; }
+#jzfxn .bdsharebuttonbox a, #jzfxn .bdsharebuttonbox .bds_more {
+    float: left;
+    font-size: 12px;
+    padding-left: 25px;
+    line-height: 16px;
+	text-align: left;
+    height: 16px;
+    background: url("http://bdimg.share.baidu.com/static/api/img/share/icons_1_16.png?v=01d441d0.png") no-repeat scroll 0px 0px ;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin: 6px 6px 6px 0px;
+	text-indent: 0;
+    overflow: hidden;
+	width: 68px;
+}
+#jzfxn .bdsharebuttonbox .bds_qzone {
+    background-position: 0px -52px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tsina {
+    background-position: 0px -104px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tqq {
+    background-position: 0px -260px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_renren {
+    background-position: 0px -208px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tqf {
+    background-position: 0px -364px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tieba {
+    background-position: 0px -728px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_sqq {
+    background-position: 0px -2652px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_hi {
+    background-position: 0px -416px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_isohu {
+    background-position: 0px -3016px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_weixin {
+    background-position: 0px -1612px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_t163 {
+    background-position: 0px -832px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_tsohu {
+    background-position: 0px -520px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_baidu {
+    background-position: 0px -2600px !important;
+}
+#jzfxn .bdsharebuttonbox .bds_qq {
+    background-position: 0px -624px !important;
+}
+#jz52top a b {
+    visibility: hidden;
+    font-weight: normal;
+}
+</style> 
+
+<script type="text/javascript"> 
+// JavaScript Document
+function goTopEx(){
+        var obj=document.getElementById("goTopBtn");
+        function getScrollTop(){
+                return document.documentElement.scrollTop || document.body.scrollTop;
+            }
+        function setScrollTop(value){
+            if(document.documentElement.scrollTop){
+                    document.documentElement.scrollTop=value;
+                }else{
+                    document.body.scrollTop=value;
+                }
+                
+            }    
+        window.onscroll=function(){getScrollTop()>0?obj.style.display="":obj.style.display="none";
+                    var h=document.body.scrollHeight - getScrollTop() - obj.offsetTop - obj.offsetHeight;
+                    obj.style.bottom=0+"px";
+                    if(h<350){
+                        obj.style.bottom=340+"px";
+                        obj.style.top="auto";
+                    }
+
+        
+        }
+        obj.onclick=function(){
+
+            var goTop=setInterval(scrollMove,10);
+            function scrollMove(){
+                    setScrollTop(getScrollTop()/1.1);
+                    if(getScrollTop()<1)clearInterval(goTop);
+
+                }
+        }
+    }
+
+</script> 
+
+<div id="jz52top" >
+    <span>
+	<DIV style="DISPLAY: none" id="goTopBtn" ><a title="{lang scrolltop}" class="jz52topa" ><b>{lang scrolltop}</b></a></DIV>
+	</span>
+    <SCRIPT type=text/javascript>goTopEx();</SCRIPT>
+	
+	<!--{if $this->jz52_fbztkg == 1}-->
+    <!--{if $_G[fid] && $_G['mod'] == 'viewthread' || $_G['mod'] == 'forumdisplay' }-->
+	<!--{if !$_GET['archiveid']}-->
+	<span>
+	<a href="forum.php?mod=post&action=newthread&fid=$_G[fid]" class="jzfbzt" title="{lang jz52_top:jz_fbzt}"><b>{lang jz52_top:jz_fbzt}</b></a>
+	</span>
+	<!--{/if}-->
+	<!--{else}-->
+	<span><a class="jzfbzt" href="forum.php?mod=misc&action=nav" title="{lang jz52_top:jz_fbzt}" onclick="showWindow('nav', this.href, 'get', 0)" ><b>{lang jz52_top:jz_fbzt}</b></a></span>	
+	<!--{/if}-->
+	<!--{/if}-->
+	
+	<!--{if $_G[fid] && $_G['mod'] == 'viewthread'}-->
+	<!--{if $this->jz52_ln == 1}-->
+	<span><a class="jzlast" href="forum.php?mod=redirect&goto=nextoldset&tid=$_G[tid]" title="{lang jz52_top:jz_sgzt}" ><b>{lang jz52_top:jz_sgzt}</b></a></span>	
+	<span><a class="jznext" href="forum.php?mod=redirect&goto=nextnewset&tid=$_G[tid]" title="{lang jz52_top:jz_xgzt}" ><b>{lang jz52_top:jz_xgzt}</b></a></span>
+	<!--{/if}-->
+	<span><a href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&extra=$_GET[extra]&page=$page{if $_GET[from]}&from=$_GET[from]{/if}" onclick="showWindow('reply', this.href)" class="replyfast" title="{lang fastreply}"><b>{lang fastreply}</b></a></span>	
+	<!--{if $this->jz52_sctz == 1}-->
+	<span><a href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]&formhash={FORMHASH}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' {lang jz52_top:jz_rysc}'" title="{lang fav_thread}" class="jzsct" ><b>{lang jz52_top:jz_sctz}</b></a></span>
+	<!--{/if}-->
+	<!--{/if}-->	
+	<!--{if $_G[fid]}-->
+	<!--{if $_G['mod'] == 'viewthread'}-->
+	<span>		
+		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]" hidefocus="true" class="returnlist" title="{lang jz52_top:jz_fhlb}"><b>{lang jz52_top:jz_fhlb}</b></a>
+	</span>	
+		<!--{else}-->
+	<span>	
+		<a  href="index.php" hidefocus="true" class="returnboard" title="{lang jz52_top:jz_fhsy}"><b>{lang jz52_top:jz_fhsy}</b></a>
+	</span>
+	    <!--{if $this->jz52_scbk == 1 && CURMODULE!='group'}-->
+		<span><a href="home.php?mod=spacecp&ac=favorite&type=forum&id=$_G[fid]&handlekey=favoriteforum&formhash={FORMHASH}" id="a_favorite" title="{lang jz52_top:jz_scbk}"  class="jzscb" onclick="showWindow(this.id, this.href, 'get', 0);"><b>{lang jz52_top:jz_scbk}</b></a></span>
+	    <!--{/if}-->
+	<!--{/if}-->
+	<!--{/if}-->
+	<!--{if $this->jz52_kf == 1}-->
+    <span><a href="{$this->jz52_kfurl}" title="{lang jz52_top:jz_lxwm}" class="jzkf" target="_blank" ><b>{lang jz52_top:jz_lxwm}</b></a></span>
+    <!--{/if}-->
+	
+	<!--{if $this->jz52_qqqan == 1}-->
+    <span><a rel="nofollow" title="{lang jz52_top:jz_gfqqq}" class="jzqqq" href="javascript:;" onclick="showWindow('qqgroup','plugin.php?id=jz52_top:qqgroup')"><b>{lang jz52_top:jz_gfqqq}</b></a></span>	
+    <!--{/if}-->
+    <!--{if $this->jz52_zdy == 1}-->
+    <span>{$this->jz52_zdybt}</span>	
+	<!--{/if}-->
+	<!--{if $this->jz52_fenxiang == 1}-->
+<span><ul id="navmenu"> <li><a title="{lang jz52_top:jz_fenx}"  class="jzfx" ><b>{lang jz52_top:jz_fenx}</b></a> <ul> <div class="jzfxn" id="jzfxn">
+{$this->jz52_fenxidm}
+</div> </ul></li></ul> </span>
+    <!--{/if}-->
+	<!--{if $this->jz52_gzwx == 1}-->
+<span><ul id="navmenu"> <li><a title="{lang jz52_top:jz_gzwx}"  class="jzwx" href="javascript:void(0)"><b>{lang jz52_top:jz_gzwx}</b></a> <ul> <div id="jzqrn">
+{$this->jz52_gzwxdm}
+</div> </ul></li></ul> </span>	
+    <!--{/if}-->	
+	<!--{if $this->jz52_qr == 1}-->
+<span><ul id="navmenu"> <li><a title="QR Code"  class="jzqr" href="forum.php?mobile=yes"><b>QR Code</b></a> <ul> <div id="jzqrn">
+{$this->jz52_qrimg}
+</div> </ul></li></ul> </span>	
+    <!--{/if}-->
+
+<!--{if $this->jz52_grzx == 1}-->
+<span>
+<ul id="navmenu"> 
+<li><a title="{lang jz52_top:jz_grzx}" class="jzwo" ><b>{lang jz52_top:jz_grzx}</b></a> 
+
+<ul> <div id="jzwon">
+
+<style type="text/css">
+
+#jzgrzxkp {
+	height: 260px;
+	width: 231px;
+	background:#f2f6f8 ;
+	font-family: Microsoft YaHei;
+}
+
+#jzgrzxkp .jzgrzxkptop {
+	height: 140px;
+	background:  <!--{if $this->jz52_grzxbjthe == 1}--><!--{elseif $this->jz52_grzxbjthe == 2}-->url("source/plugin/jz52_top/template/1.jpg") no-repeat 0 0<!--{elseif $this->jz52_grzxbjthe == 3}-->url("source/plugin/jz52_top/template/2.jpg") no-repeat 0 0<!--{elseif $this->jz52_grzxbjthe == 4}-->url("source/plugin/jz52_top/template/3.jpg") no-repeat 0 0<!--{elseif $this->jz52_grzxbjthe == 5}-->url("source/plugin/jz52_top/template/4.jpg") no-repeat 0 0<!--{/if}-->  {$this->jz52_grzxbjs} ;
+	color: #fff;
+}
+
+#jzgrzxkp .jzgrzxkptop a{
+
+	color: #fff;
+}
+
+#jzgrzxkp .jzgrzxkptop h3 {
+	 height: 16px;
+font-weight:normal;
+    padding: 8px 0px 0px 10px;
+	font-size: 16px;
+}
+
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpthtle {
+	height: 35px;
+}
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpimg {
+	height: 73px;
+	text-align:center;
+}
+
+#jzgrzxkp .jzgrzxkptop .jzgrzxkpimg img {
+	width: 58px;
+	border-radius: 100px;
+	padding: 2px;
+	background: none repeat scroll 0% 0% #fff;
+	margin-top: 5px;
+}
+
+#jzgrzxkp .jzyhm {
+    font-size: 15px;
+    line-height: 22px;
+	text-align: center;
+	padding-bottom: 10px;
+	text-align:center;
+}
+
+#jzgrzxkp .jzyhm a {
+    width: 231px;
+    height: 15px;
+	text-align:center;
+	background: none ;
+}
+
+#jzgrzxkp .jzgrzxkpbox  { height: 120px; }
+
+#jzgrzxkp .jzgrzxkpbox a {background:url("source/plugin/jz52_top/template/gr.png") no-repeat 0 0  ; width:57px;height:60px;float:left; margin: 0px;}
+
+.box01{background-position: 0px 0px !important;}
+.box02{background-position: -57px 0px !important;}
+.box03{background-position: -114px 0px !important;}
+.box04{background-position: -171px 0px !important;}
+
+.box05{background-position: 0px -60px !important;}
+.box06{background-position: -57px -60px !important;}
+.box07{background-position: -114px -60px !important;}
+.box08{background-position: -171px -60px !important;}
+
+</style>
+
+<div id="jzgrzxkp" class="jzgrzxkp">
+<div class="jzgrzxkptop">
+<div class="jzgrzxkpthtle">
+<h3>{lang jz52_top:jz_grzx}</h3>
+</div>  
+<div class="jzgrzxkpimg">
+<img src="{$this->jz52_uc}/avatar.php?uid=$_G[uid]&size=big" height="58">
+</div>
+<!--{if $_G['uid']}-->    
+<div class="jzyhm"><a href="home.php?mod=space&uid=$_G[uid]" target="_blank" title="{lang visit_my_space}" >{$_G[member][username]}</a></div>
+<!--{else}-->   
+<div class="jzyhm"><a href="member.php?mod=logging&action=login" onClick="showWindow('login', this.href)">{lang jz52_top:jz_dlzc}</a></div>
+<!--{/if}--> 
+</div>
+<div class="jzgrzxkpbox">
+<a href="home.php?mod=space&do=favorite&view=me" class="box01" target="_blank"  title="{lang favorite}" ></a>
+<a href="forum.php?mod=guide&view=my" class="box02" target="_blank"  title="{lang mypost}" ></a>
+<a href="home.php?mod=space&do=friend" class="box03" class="box04" target="_blank"  title="{lang friends}" ></a>
+<a href="home.php?mod=space&do=pm" class="box04" target="_blank"  title="{lang pm_center}" ></a>
+<a href="home.php?mod=spacecp" class="box05" target="_blank" title="{lang setup}" ></a>
+<a href="home.php?mod=medal" class="box06" target="_blank" title="{lang medals}" ></a>
+<a href="home.php?mod=task" class="box07" target="_blank" title="{lang task}" ></a>
+<!--{if $_G[uid]}-->
+<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}" class="box08" title="{lang logout}" ></a>
+<!--{/if}-->
+</div>
+</div>
+</div>
+</ul>
+</li>
+</ul>
+</span>	
+<!--{/if}-->
+</div>
+<!--{/if}-->
+<!--{/block}-->

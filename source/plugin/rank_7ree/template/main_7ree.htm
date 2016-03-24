@@ -1,0 +1,24 @@
+<!--{if $rank_7ree}-->
+	<div class="xld ranklistbox_7ree">
+		<!--{loop $rank_7ree $rankid_7ree $rank_value}-->
+		<dl class="bbda cl ranklist_7ree" >
+			<dd class="ranknum_7ree"><!--{if $rankid_7ree < 3}--><img src="{IMGDIR}/rank_<!--{eval echo $rankid_7ree+1;}-->.gif" alt="$key" /><!--{else}--><strong><!--{eval echo $rankid_7ree+1;}--></strong><!--{/if}--></dd>
+
+			<dd class="avt avt_7ree"><a href="home.php?mod=space&uid={$rank_value['authorid']}" target="_blank"><!--{avatar($rank_value['authorid'],small)}--></a></dd>
+			
+			<dd class="detail_7ree">
+			<p><span class="title_7ree"><a href="forum.php?mod=viewthread&tid={$rank_value['tid']}" target="_blank" {$rank_value['highlight']}>{$rank_value['subject']}</a></span></p>
+			<p>{lang rank_7ree:htm_lang_author_7ree}<a href="home.php?mod=space&uid={$rank_value['authorid']}" target="_blank">{$rank_value['author']}</a><span class="pipe">|</span>{lang rank_7ree:htm_lang_forum_7ree}<a href="forum.php?mod=forumdisplay&fid={$rank_value['fid']}" target="_blank">{$rank_value['fname']}</a><span class="pipe">|</span>{lang rank_7ree:htm_lang_chakan_7ree}<strong>{$rank_value['views']}</strong>{lang rank_7ree:htm_lang_ci_7ree}<span class="pipe">|</span>{lang rank_7ree:htm_lang_huifu_7ree}<strong>{$rank_value['replies']}</strong>{lang rank_7ree:htm_lang_ci_7ree}</p>
+			</dd>
+			<dd class="y hotnum_7ree">
+				<p class="xw0">{lang rank_7ree:htm_lang_huifuyu_7ree}<a href="forum.php?mod=redirect&tid={$rank_value['tid']}&goto=lastpost#lastpost" target="_blank">{$rank_value['lastpost']}</a></p>
+				<p class="xw0">{lang rank_7ree:htm_lang_fabiaoyu_7ree}<a href="forum.php?mod=viewthread&tid={$rank_value['tid']}" target="_blank">{$rank_value['dateline']}</a></p>
+			</dd>
+
+		</dl>
+
+		<!--{/loop}-->
+	</div>
+<!--{else}-->
+     <div class="nodatatip_7ree">{lang rank_7ree:htm_lang_nodata_7ree}</div>
+<!--{/if}-->

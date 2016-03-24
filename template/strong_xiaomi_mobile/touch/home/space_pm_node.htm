@@ -1,0 +1,30 @@
+<!--{if $value[msgfromid] != $_G['uid']}-->
+
+
+<div class="reply_pml">
+		<div class="author">
+			<a href="home.php?mod=space&uid=$value[authorid]" ><img  src="<!--{avatar($value[msgfromid], small, true)}-->" /></a>
+		</div>
+		<div class="dialog_l">
+			<div class="dialog_t">$value[message]</div>
+			<div class="date"><!--{date($value[dateline], 'u')}--></div>
+
+		</div>
+
+</div>
+<!--{else}-->
+<div class="reply_pmr">
+		<div class="author">
+			<a href="home.php?mod=space&uid=$value[authorid]" ><img  src="<!--{avatar($value[msgfromid], small, true)}-->" /></a>
+		</div>
+
+		<div class="dialog_r">
+			<div class="dialog_t"> $value[message]</div>
+			<div class="date"><!--{date($value[dateline], 'u')}--></div>
+
+		</div>
+
+
+
+</div>
+<!--{/if}-->

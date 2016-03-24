@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
+	<!--{if $_G['config']['output']['iecompatible']}--><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE{$_G['config']['output']['iecompatible']}" /><!--{/if}-->
+	<title><!--{if !empty($navtitle)}-->$navtitle - <!--{/if}--><!--{if empty($nobbname)}--> $_G['setting']['bbname']<!--{/if}--></title>
+	$_G['setting']['seohead']
+	<meta name="author" content="Coder Studen Union(www.dzcsu.com)2015112921KktVY1229Y" />
+	<meta name="MSSmartTagsPreventParsing" content="True" />
+	<meta http-equiv="MSThemeCompatible" content="Yes" />
+	<base href="{$_G['siteurl']}" />
+	<!--{csstemplate}-->
+	<script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', JSPATH = '$_G[setting][jspath]';</script>
+	<script type="text/javascript" src="{$_G[setting][jspath]}common.js?{VERHASH}"></script>
+	<!--{if empty($_GET['diy'])}--><!--{eval $_GET['diy'] = '';}--><!--{/if}-->
+	<!--{if !isset($topic)}--><!--{eval $topic = array();}--><!--{/if}-->
+
+<style>    
+    #toptb a{color:#FFFFFF}
+    #toptb {
+        padding: 0 15px;
+        border-bottom: 1px solid #EFEFEF;
+        font: 13px/1.5 Tahoma,Helvetica,'SimSun',sans-serif;
+        background-color: #FF0000;
+           height: 35px;
+           line-height: 35px;
+           color:white;
+    }
+	#navs_menu a span{display:none;}
+    .showmenu{background: url(../../static/image/common/arrwd.gif) no-repeat 100% 80%;}
+</style>
+</head>
+
+<body scroll="no" id="nv_localurl" onkeydown="if(event.keyCode==27) return false;">
+    <table border="0" cellPadding="0" cellSpacing="0" height="100%" width="100%">
+        <tr>
+            <td style="height: 25px;">
+                <div id="append_parent"></div><div id="ajaxwaitid"></div>
+                <div id="toptb" class="cl">
+                    <div class="z">
+                        <a href="./" id="navs" class="showmenu xi2" onmouseover="showMenu(this.id)">{lang localurl:1}</a>
+                    </div>
+                    <div class="y">
+                        <!--{if $_G['uid']}-->
+                        <strong><a href="home.php?mod=space" target="_blank" title="{lang visit_my_space}">{$_G[member][username]}</a></strong>
+                        <!--{hook/global_usernav_extra1}-->
+                        <a href="home.php?mod=spacecp">{lang setup}</a>
+                        <!--{if $_G['uid'] && ($_G['group']['radminid'] == 1 || getstatus($_G['member']['allowadmincp'], 1))}--><a href="admin.php" target="_blank">{lang admincp}</a><!--{/if}-->
+                        <!--{hook/global_usernav_extra2}-->
+                        <a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+                        <!--{elseif !empty($_G['cookie']['loginuser'])}-->
+                        <strong><a id="loginuser">$_G['cookie']['loginuser']</a></strong>
+                        <a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang activation}</a>
+                        <a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+                        <!--{else}-->
+                        <a href="member.php?mod={$_G[setting][regname]}">$_G['setting']['reglinkname']</a>
+                        <a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang login}</a>
+                        <!--{/if}-->
+						<a href="http://www.dzcsu.com" target="_blank" title="{lang localurl:0}" >{lang localurl:0}</a>
+                    </div>
+                </div>
+                <!--{if !empty($_G['setting']['plugins']['jsmenu'])}-->
+                <ul class="p_pop h_pop" id="plugin_menu" style="display: none">
+                    <!--{loop $_G['setting']['plugins']['jsmenu'] $module}-->
+                    <!--{if !$module['adminid'] || ($module['adminid'] && $_G['adminid'] > 0 && $module['adminid'] >= $_G['adminid'])}-->
+                    <li>$module[url]</li>
+                    <!--{/if}-->
+                    <!--{/loop}-->
+                </ul>
+                <!--{/if}-->
+                $_G[setting][menunavs]
+
+                <!--{if $_G['setting']['navs']}-->
+                <ul class="p_pop h_pop" id="navs_menu" style="display: none">
+                    <!--{loop $_G['setting']['navs'] $nav}-->
+                    <!--{eval $nav_showmenu = strpos($nav['nav'], 'onmouseover="showMenu(');}-->
+                    <!--{eval $nav_navshow = strpos($nav['nav'], 'onmouseover="navShow(')}-->
+                    <!--{if $nav_hidden !== false || $nav_navshow !== false}-->
+                    <!--{eval $nav['nav'] = preg_replace("/onmouseover\=\"(.*?)\"/i", '',$nav['nav'])}-->
+                    <!--{/if}-->
+                    <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li $nav[nav]></li><!--{/if}-->
+                    <!--{/loop}-->
+                </ul>
+                <!--{/if}-->
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <iframe id="url_mainframe" frameborder="0" scrolling="yes" name="main" src="{$url}" style="height: 100%; visibility: inherit; width: 100%; z-index: 1;overflow: visible;"></iframe>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<ul id="waterfall">
+<!--{loop $threads $key $val}-->
+<li class="threadwrap">
+	<div class="thread">
+		<div class="threadpart">
+			<a href="forum.php?mod=viewthread&tid={$val[tid]}" title="{$val[subject]}"> 
+				<img src="{$val[image]}" border="0" alt="{$val[subject]}" width="{$picwidth}" style="max-height:{$picmaxheight}px;" />
+			</a>
+		</div>
+		<div class="threadpart cl ul">
+					<h4><a href="forum.php?mod=viewthread&tid={$val[tid]}" title="{$val[subject]}">{$val[subject]}</a></h4>
+					<cite class="l"><em id="likes"></em>{lang waterfall:love}:{$val[recommends]}</cite>
+					<cite class="r"><em id="views"></em>{lang waterfall:views}:{$val[views]}<em id="replies"></em>{lang waterfall:replies}:{$val[replies]}</cite>
+		</div>
+		<div class="threadpart cl auth">
+					<a href="home.php?mod=space&uid={$val[authorid]}"><img class="l" src="{$val[avatar]}" onerror="this.onerror=null;this.src='{$noavatar}'"/></a>
+					<span><a href="home.php?mod=space&uid={$val[authorid]}">{$val[author]}</a>&nbsp;&nbsp;{lang waterfall:publish}&nbsp;{$val[dateline]}.&nbsp;</span>
+		</div>
+	</div>
+</li>
+<!--{/loop}-->
+</ul>
+

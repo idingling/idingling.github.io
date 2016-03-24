@@ -1,0 +1,101 @@
+<!--{template common/header}-->
+<div class="s_dbdh">
+	<div class="right">
+		<a href="javascript:;" onclick="do_click('#xiangguan');"><img id="s_more" src="{$_G['siteurl']}/template/strong_xiaomi_mobile/touch/images/s_more.png"/></a>
+	</div>
+	<div class="z left">
+		<a href="{$_G['siteurl']}forum.php" class="z"><img src="{$_G['siteurl']}template/strong_xiaomi_mobile/touch/images/g/back.png"/></a>
+	</div>
+    <div class="s_logo">
+    	<a  href="javascript:;" >{echo cutstr(strip_tags($cat[catname]),12)}</a>
+    </div>
+</div>
+
+<div  class="g_mbx cl">
+	<div class="z">
+		<a href="{$_G['siteurl']}" class="nvhm" title="{lang homepage}">{lang homepage}</a><em>&rsaquo;</em>
+		<!--{loop $cat[ups] $value}--> <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><em>&rsaquo;</em><!--{/loop}-->
+		$cat[catname]
+	</div>
+</div>
+
+<!--{ad/portal_top_mobile}-->
+
+
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+<div class="threadlist_ul" style="display:none;" id="xiangguanid">
+			<!--{if $cat[others]}-->
+				<div class="s_sgfl">
+					<h5>{lang category_related}</h5>
+					<div class="s_sgflk">
+					<!--{loop $cat[others] $value}-->
+						<a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a>
+					<!--{/loop}-->
+					</div>
+				</div>
+			<!--{/if}-->
+			<!--{if $cat[subs]}-->
+				<div class="s_sgfl">
+				<h5>{lang sub_category}</h5>
+				<!--{eval $i = 1;}-->
+					<div class="s_sgflk">
+					<!--{loop $cat[subs] $value}-->
+					<a href="{$portalcategory[$value['catid']]['caturl']}" >$value[catname]</a>
+					<!--{/loop}-->
+					</div>
+				</div>
+			<!--{/if}-->
+</div>
+
+<script type="text/javascript">
+    function do_click(spkh) {
+			$(spkh+'id').fadeToggle(0);
+			if($("#xiangguanid").css('display') == 'none'){
+				$("#s_more").attr("src","{$_G['siteurl']}template/strong_xiaomi_mobile/touch/images/s_more.png");
+				$("#g_mcbox").hide();
+
+				}else{
+				$("#s_more").attr("src","{$_G['siteurl']}template/strong_xiaomi_mobile/touch/images/s_morek.png");
+				$("#g_mcbox").show();
+				}
+        }
+		
+		$(document).ready(function(){ 
+		¡¡¡¡$("#select_a").css("background-image","url({$_G['siteurl']}static/image/mobile/images/pic_select.png)");
+		}); 
+		
+		
+
+
+
+</script>
+<div class="potlist">
+	<ul>
+			<!--{loop $list['list'] $value}-->
+			<li>
+			<!--{eval $highlight = article_title_style($value);}-->
+			<!--{eval $article_url = fetch_article_url($value);}-->
+
+			<a href="{$_G['siteurl']}$article_url" >
+            	<!--{if $value[pic]}--><div class="potlist_img"><img src="{$_G['siteurl']}$value[pic]"  /></div><!--{/if}-->
+				<div class="potlisttitle""><h3>$value[title]</h3></div>
+				<div class="potlist_div">			
+
+				<p>$value[summary]</p></div>
+
+			</a>
+			</li>
+			<!--{/loop}-->
+	</ul>
+
+</div>
+{$list['multi']}
+
+
+
+
+<!--{ad/portal_bottom_mobile}-->
+<div id="g_mcbox" class="g_mcbox" onclick="do_click('#xiangguan');" style="display:none"></div>
+<!--{template common/footer}-->

@@ -1,0 +1,109 @@
+<!--{subtemplate common/header}-->
+<link rel="stylesheet" type="text/css" href="./source/plugin/k_misign/static/default/sign.css" />
+<div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em>
+        <a href="{$setting['pluginurl']}sign"><!--{if $setting['title']}-->{$setting['title']}<!--{else}-->{lang k_misign:sign}<!--{/if}--></a><em>&raquo;</em>
+        <a href="{$setting['pluginurl']}misc&operation=rewardrule">{lang k_misign:rewardrule}</a>
+	</div>
+</div>
+<div id="ct" class="wp ct2_a cl">
+	<div class="appl">
+    	<div class="tbn">
+        	<h2 class="mt bbda">{lang k_misign:rule}</h2>
+            <ul>
+                <li {if $operation == 'rewardrule'}class="a"{/if}><a href="{$setting['pluginurl']}misc&operation=rewardrule">{lang k_misign:rewardrule}</a></li>
+                <li {if $operation == 'magics'}class="a"{/if}><a href="{$setting['pluginurl']}misc&operation=magics">{lang k_misign:extend_magics}</a></li>
+            </ul>
+        </div>
+    </div>
+	<div class="mn">
+		<div class="bm bw0 cl">	
+        	<div class="bm_c cl">
+            	<p>{lang k_misign:base_reward}:&nbsp;{$setting['mincredit']}~{$setting['maxcredit']}&nbsp;{$_G['setting']['extcredits'][$setting['nrcredit']]['unit']}{$_G['setting']['extcredits'][$setting['nrcredit']]['title']}</p>
+        	</div>
+            <!--{if $extreward_num}-->
+            <div class="bm_h"><h2>{lang k_misign:reward_top}</h2></div>
+            <div class="mbn tl cl">
+				<table cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr class="th">
+                        	<td class="icn">&nbsp;</td>
+							<td class="frm">{lang k_misign:reward_rank}</td>
+                            <td>{lang k_misign:reward_top_ext}</td>
+						</tr>
+					</tbody>
+					<tbody>
+                    	<!--{loop $extrewardlist $key $extreward}-->
+						<tr>
+                        	<td class="icn">&nbsp;</td>
+                            <td class="frm">{$extreward['ul']}</td>
+                            <td>&nbsp;{$extreward['number']}&nbsp;{$_G['setting']['extcredits'][$extreward['type']]['unit']}{$_G['setting']['extcredits'][$extreward['type']]['title']}</td>
+						</tr>
+                        <!--{/loop}-->
+					</tbody>
+				</table>
+            </div>
+            <!--{/if}-->
+            <!--{if $setting['extends']['lastrule']}-->
+            <div class="bm_h"><h2>{lang k_misign:extend_lastrule}</h2></div>
+            <div class="tl cl">
+				<table cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr class="th">
+                        	<td class="icn">&nbsp;</td>
+							<td class="frm">{$exlang['lastrule']['lastday']}</td>
+                            <td>{lang k_misign:reward_top_ext}</td>
+							<td class="frm">{lang k_misign:reward_medal}</td>
+						</tr>
+					</tbody>
+					<tbody>
+                    	<!--{loop $lastrewardlist $key $lastreward}-->
+						<tr>
+                        	<td class="icn">&nbsp;</td>
+                            <td class="frm">{$lastreward['lastday']}{lang k_misign:days}</td>
+                            <td>
+                            <!--{loop $lastreward['reward'] $lreward}-->
+                            {$lreward['number']}&nbsp;{$_G['setting']['extcredits'][$lreward['type']]['unit']}{$_G['setting']['extcredits'][$lreward['type']]['title']};
+                            <!--{/loop}-->
+                            </td>
+                            <td class="frm">{$medallist[$lastreward['relatedmedal']]['name']}<!--{if $lastreward['relatedmedaldate']}-->&nbsp;(&nbsp;{$lastreward['relatedmedaldate']}&nbsp;{lang k_misign:days}&nbsp;)&nbsp;<!--{/if}--></td>
+						</tr>
+                        <!--{/loop}-->
+					</tbody>
+				</table>
+            </div>
+            <!--{/if}-->
+            <!--{if $setting['extends']['lastrule']}-->
+			<div class="bm_h mtn"><h2>{lang k_misign:extend_totalrule}</h2></div>
+            <div class="tl cl">
+				<table cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr class="th">
+                       	  <td class="icn">&nbsp;</td>
+							<td class="frm">{$exlang['totalrule']['days']}</td>
+                            <td>{lang k_misign:reward_top_ext}</td>
+							<td class="frm">{lang k_misign:reward_medal}</td>
+						</tr>
+					</tbody>
+					<tbody>
+                    	<!--{loop $totalrewardlist $key $last2reward}-->
+						<tr>
+                        	<td class="icn">&nbsp;</td>
+                            <td class="frm">{$last2reward['lastday']}{lang k_misign:days}</td>
+                            <td>
+                            <!--{loop $totalreward['reward'] $l2reward}-->
+                            {$l2reward['number']}&nbsp;{$_G['setting']['extcredits'][$l2reward['type']]['unit']}{$_G['setting']['extcredits'][$l2reward['type']]['title']};
+                            <!--{/loop}-->
+                            </td>
+                            <td class="frm">{$medallist[$last2reward['relatedmedal']]['name']}<!--{if $lastreward['relatedmedaldate']}-->&nbsp;(&nbsp;{$last2reward['relatedmedaldate']}&nbsp;{lang k_misign:days}&nbsp;)&nbsp;<!--{/if}--></td>
+						</tr>
+                        <!--{/loop}-->
+					</tbody>
+				</table>
+            </div>
+            <!--{/if}-->
+    	</div>
+    </div>
+</div>
+{subtemplate common/footer}
