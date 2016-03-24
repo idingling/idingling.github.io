@@ -1,1 +1,0 @@
-<?phpif(!defined('IN_DISCUZ')) {   exit('Access Deined');}  include template('yewumeng_ga:yewumeng');?>
