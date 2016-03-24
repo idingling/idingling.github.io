@@ -1,0 +1,10 @@
+#qq_groupbox{ padding: 0 12px; width: 710px; }
+.qq_list{ width: 710px;}
+.qq_list dt{ width: 34px; padding-right: 4px; overflow: hidden; }
+.qq_list dt img{padding:1px;border:1px #ccc solid;}
+.qq_list dt, .qq_list dd{ float: left; height: 40px;}
+.qq_name{width:110px;font-weight:bold; text-align:middle;}
+.qq_copy{ width: 90px;}
+.qq_img{ width: 100px;}
+.qq_qr{ width: 40px;}
+.qgroupinfo{ padding: 7px 10px 0; border-top: 1px solid #d1d1d1; }

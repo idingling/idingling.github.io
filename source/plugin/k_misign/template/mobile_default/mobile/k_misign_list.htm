@@ -1,0 +1,23 @@
+<div class="nav">
+	<a href="javascript:;" id="k_misignlist_today" onclick="ajaxlist('today');" {if $_GET['op'] == ''}class="nav-cur"{/if}>{lang k_misign:ranklist_today}</a>
+	<a href="javascript:;" id="k_misignlist_month" onclick="ajaxlist('month');" {if $_GET['op'] == 'month'}class="nav-cur"{/if}>{lang k_misign:ranklist_month}</a>
+	<a href="javascript:;" id="k_misignlist_zong" onclick="ajaxlist('zong');" {if $_GET['op'] == 'zong'}class="nav-cur"{/if}>{lang k_misign:ranklist_zong}</a>
+</div>
+<table class="common">
+    <tr style="font-weight: bold;height: 30px;">
+        <td style="text-align:left;"><span style="margin-left:10px;">{lang k_misign:ranklist_nickname}</span></td>
+        <td width="70px"><!--{if $_GET['op'] == 'zong'}-->{lang k_misign:ranklist_days}<!--{else}-->{lang k_misign:ranklist_monthdays}<!--{/if}--></td>
+        <td width="130px">{lang k_misign:ranklist_lasttime}</td>
+    </tr>
+    <!--{if $mrcs}-->
+    <!--{loop $mrcs $mrc}-->
+        <tr>
+            <td style="text-align:left;"><a href="home.php?mod=space&uid=$mrc[uid]" target="_blank" style="margin-left:10px;">$mrc[username]</a></td>
+            <td><!--{if $_GET['op'] == 'zong'}-->{$mrc[days]}<!--{else}-->{$mrc[mdays]}<!--{/if}--></td>
+            <td>{$mrc[time]}</td>
+        </tr>
+    <!--{/loop}-->
+    <!--{else}-->
+	<tr><td colspan="3">{lang k_misign:noinfo}</td></tr>
+     <!--{/if}-->
+</table>

@@ -1,0 +1,37 @@
+<!--{if $data[commentnum]}-->
+<div class="s-sxy">
+<ul><li><a href="$common_url" >&nbsp;&nbsp;{lang view_all_comments}($data[commentnum])</a></li></ul></div><!--{/if}-->
+		<!--{loop $commentlist $comment}-->
+		<!--{template portal/comment_li}-->
+		<!--{if !empty($aimgs[$comment[cid]])}-->
+			<script type="text/javascript" reload="1">aimgcount[{$comment[cid]}] = [<!--{echo implode(',', $aimgs[$comment[cid]]);}-->];attachimgshow($comment[cid]);</script>
+		<!--{/if}-->
+		<!--{/loop}-->
+
+
+		<!--{if !$data[htmlmade]}-->
+		<div class="potpl_from">
+			<form id="cform" name="cform" action="$form_url" method="post" autocomplete="off">
+
+			<textarea name="message" rows="2" class="s-input-text" id="message" onfocus="if(this.innerHTML='{echo $lang['butubukuai'];}'){this.innerHTML=''};this.style.border='solid 1px #c0c0c0';">{echo $lang['butubukuai'];}</textarea>
+
+
+				<!--{if !empty($topicid) }-->
+					<input type="hidden" name="referer" value="$topicurl#comment" />
+					<input type="hidden" name="topicid" value="$topicid">
+				<!--{else}-->
+					<input type="hidden" name="portal_referer" value="$viewurl#comment">
+					<input type="hidden" name="referer" value="$viewurl#comment" />
+					<input type="hidden" name="id" value="$data[id]" />
+					<input type="hidden" name="idtype" value="$data[idtype]" />
+					<input type="hidden" name="aid" value="$aid">
+				<!--{/if}-->
+				<input type="hidden" name="formhash" value="{FORMHASH}">
+				<input type="hidden" name="replysubmit" value="true">
+				<input type="hidden" name="commentsubmit" value="true" />
+				<button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" style="width:100%; margin-top:10px;" class="button">{lang comment}</button>
+
+			</form>
+			</div>
+		<!--{/if}-->
+

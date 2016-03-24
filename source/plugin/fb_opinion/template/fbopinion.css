@@ -1,0 +1,48 @@
+/*@charset "utf-8";*/
+.clearfix:after{ content:'.'; display:block; clear:both; visibility:hidden; height:0}
+/* list */
+.fbblock{ border-bottom: 1px solid #CCC; margin: 10px 20px 10px 10px; padding-bottom: 10px;}
+.fbblock dl.reply, .fbblock dl.reply a{color:#F60;}
+.fbblock dl dd{ width:80%;}
+.fbblock dl dd span.time{ color:#999; margin:0 10px;}
+.opinionbox:after{ content:"."; height:0; clear:both; display:none; }
+.opinionbox dt{ line-height:24px; font-size:12px;}
+.opinionbox dd{ line-height:20px; font-size:12px; text-indent:2em;}
+.fbblock dd .replybtn{ margin-left:20px; color:#000; background-color:rgba(99, 110, 156, 0.2); padding:2px;}
+.fbblock dd .replybtn a, .fbblock dd .deletebtn a{ text-decoration:none; color:#333;}
+.fbblock dd .deletebtn{ margin:0 5px; color:#000; background-color:rgba(99, 110, 156, 0.2); padding:2px;}
+.fbblock .firstanswerlist{ margin-top:5px;}
+.fbblock .firstanswerlist dt a{ color:#F60;}
+.fbblock .commentlistbox{ margin:10px 0; display:block; line-height:24px; }
+#showprecount{ margin-left:10px;}
+/* reply and ask */
+#publishbox{}
+.controlnotice{ margin:10px;}
+#replybox, #askbox{ width:80%; margin:10px;}
+#publishbox .textareabox{ height:130px;}
+#publishbox textarea{ height:100px; width:80%;}
+#publishbox  .textareabox .error{color:red; display:block; line-height:30px;}
+/* opinion box*/
+.opinionpublishbox{ width:100%; margin-bottom:50px;}
+.opinionpublishbox dl{height:36px; overflow: hidden; border-left:0; border-right:0;}
+.opinionpublishbox dl.dlfirst{ background: none;}
+.opinionpublishbox dl:after{ content:"."; height:0; clear:both; display:none; }
+.opinionpublishbox dt{ float: left; width: 105px;text-align:center; line-height:36px;}
+.opinionpublishbox dd{ float: left; padding:0 10px;}
+.opinionpublishbox dd input{ width:220px; height:22px; line-height:22px; text-indent: 2px; padding:0; border:1px inset;}
+.opinionpublishbox dl.input{height:36px;}
+.opinionpublishbox dl.input dd{ padding:6px 10px;}
+.opinionpublishbox dl.select{ line-height:36px;}
+.opinionpublishbox dl.select p{ float:left;}
+.opinionpublishbox dl.textareadl{ height:160px;}
+.opinionpublishbox dl.textareadl dt{ line-height: 160px;}
+.opinionpublishbox dd textarea{ width:500px; height:100px; margin:15px 0 5px;display: inline;}
+.opinionpublishbox dd span{ margin:0 5px; line-height:24px;}
+.opinionpublishbox dl.btn{ background: none; text-align:center; height:30px; line-height: 30px; margin-top:20px;}
+.opinionpublishbox dl.btn dd{ clear:both; text-align:center; width:90%;}
+.opinionpublishbox dl.btn dd input{ width:auto; padding: 0 20px; height: 26px; line-height: 26px;
+border: 0;}
+.ct2_a{padding:0; margin:0;}
+.opinionpublishbox dl.seccode{ height:80px; }
+.opinionpublishbox dl.seccode dt{ height:80px; line-height:80px; }
+.opinionpublishbox dl.seccode dd{ padding-top:10px;}

@@ -1,0 +1,17 @@
+<!--{block mp3}-->
+<audio src="{$url}" controls preload style="width:100%;"></audio>
+<!--{/block}-->
+
+<!--{block mp4}-->
+<video src="{$url}" poster="{$H5_YSP[poster]}" controls preload width="100%"></video>
+<!--{/block}-->
+
+<!--{block iframe}-->
+<div style=" width:{$width}px; margin:auto;">
+  <iframe height="{$height}" width="{$width}" src="{$iframe}" frameborder=0 allowfullscreen></iframe>
+</div>
+<!--{/block}-->
+
+<!--{block footer}-->
+<script src="source/plugin/muquan_h5ysp/static/js/html5media.min.js"></script>
+<!--{/block}-->

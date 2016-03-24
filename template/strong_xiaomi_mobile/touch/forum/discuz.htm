@@ -1,0 +1,134 @@
+<!--{if $_G['cache']['plugin']['strong_xiaomi_mobile'] && $_GET['forumlist'] != 1 &&  $_GET['gid'] < 1}-->
+<!--{eval require_once './source/plugin/strong_xiaomi_mobile/strong_g_set.php';}-->
+	<!--{if $_GET['index'] == "true"}-->
+    	<!--{template forum/home_index}-->
+		<!--{exit}-->
+	<!--{elseif $homeset == "1"}-->
+    	<!--{eval dheader('Location:forum.php?index=true');exit;}-->
+		<!--{exit}-->
+	<!--{elseif $homeset == "4"}-->
+		<!--{eval dheader('Location:forum.php?mod=guide&view=newthread');exit;}-->
+	<!--{elseif $homeset == "3"}-->
+		<!--{eval dheader("Location:$homeurl");exit;}-->
+ 
+    <!--{else}-->	
+			<!--{eval dheader('Location:forum.php?forumlist=1&mobile=2');exit;}-->
+        
+	<!--{/if}-->
+<!--{/if}-->
+<!--{template common/header}-->
+		<div class="s_dbdh">
+            <div class="right">
+                <a href="javascript:;" ></a>
+
+            </div>
+            <div class="z left">
+                            <a href="javascript:;" onClick="do_left();" ><img src="./template/strong_xiaomi_mobile/touch/images/g/menu.png" id="main_menuid"/></a>
+            
+            </div>
+            <div class="s_logo">
+                <a href="forum.php" >{echo $lang['forumlist'];}</a>
+            </div>
+        
+        </div>
+
+<!--{hook/index_top_mobile}-->
+<div class="topbar">
+    <ul class="tabs">
+        <li><a href="forum.php?mod=guide&view=newthread&mobile=2">{echo $lang['zuixin'];}</a></li>
+        <li><a href="forum.php?forumlist=1&amp;mobile=2" class="current">{echo $lang['bankuai'];}</a></li>
+    </ul>
+</div>
+<!-- main forumlist start -->
+<div class="fbg forumlist" id="wp">
+<!--{if $announcements!= '' && $_GET['gid'] < 1}-->
+<div class="wei_gg">
+	<div class="wei_gg_pic">
+    	<span>{echo $lang['gonggao'];}</span>
+    </div>
+    <div id="scrollDiv">
+        <ul id="ancl">$announcements</ul>
+    </div>
+</div>
+<!--{/if}-->
+	<!--{loop $catlist $key $cat}-->
+	<div class="bmw fl m_10">
+		<div class="subforumshow bm_h cl" href="#sub_forum_$cat[fid]">
+
+		<h2><a href="javascript:;">$cat[name]</a></h2>
+		</div>
+		<div id="sub_forum_$cat[fid]" class="sub_forum">
+			<ul>
+				<!--{loop $cat[forums] $forumid}-->
+				<!--{eval $forum=$forumlist[$forumid];}-->
+                <li>
+                    <span>	
+                    <!--{if $forum[icon]}-->
+						$forum[icon]
+					<!--{else}-->
+						<a href="forum.php?mod=forumdisplay&fid={$forum['fid']}&mobile=2">
+							<img src="./template/strong_xiaomi_mobile/touch/images/s_subpic.png" /></a>
+					<!--{/if}-->
+                    </span>                 
+                     <a href="forum.php?mod=forumdisplay&fid={$forum['fid']}&mobile=2">
+                        <strong>{$forum[name]}</strong>
+                    </a>
+                </li>         
+
+
+				<!--{/loop}-->
+			</ul>
+		</div>
+	</div>
+	<!--{/loop}-->
+</div>
+<!-- main forumlist end -->
+<!--{hook/index_middle_mobile}-->
+<script type="text/javascript">
+	(function() {
+		<!--{if !$_G[setting][mobile][mobileforumview]}-->
+			$('.sub_forum').css('display', 'block');
+		<!--{else}-->
+			$('.sub_forum').css('display', 'none');
+		<!--{/if}-->
+		$('.subforumshow').on('click', function() {
+			var obj = $(this);
+			var subobj = $(obj.attr('href'));
+			if(subobj.css('display') == 'none') {
+				subobj.css('display', 'block');
+				
+			} else {
+				subobj.css('display', 'none');
+				
+			}
+		});
+	 })();
+	 
+</script>
+<script type="text/javascript">
+(function() {
+       
+
+        $('.subforumshow').on('click', function() {
+var obj = $(this);
+            var bmw = obj.parents(".bmw");
+            bmw.toggleClass("unfold");
+});
+ })();
+</script>
+<!--{if $announcements!= '' && $_GET['gid'] < 1}-->
+<script>	 
+	 	function AutoScroll(obj){ 
+		$(obj).find("ul:first").animate({ 
+		marginTop:"-25px" 
+		},2000,function(){ 
+		$(this).css({marginTop:"0px"}).find("li:first").appendTo(this); 
+		}); 
+		} 
+		$(document).ready(function(){ 
+		setInterval('AutoScroll("#scrollDiv")',3000) 
+	}); 
+</script>
+<!--{/if}-->
+
+<!--{template common/footer}-->

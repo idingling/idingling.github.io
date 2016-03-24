@@ -1,0 +1,65 @@
+<!--{template common/header}-->
+<link rel="stylesheet" href="./template/strong_xiaomi_mobile/touch/group.css" type="text/css" media="all">
+		<div class="s_dbdh">
+            <div class="right">
+                <a href="group.php?mod=my" ><img src="./template/strong_xiaomi_mobile/touch/images/g/mygroup.png"/></a>
+
+            </div>
+            <div class="z left">
+                            <a href="forum.php" ><img src="./template/strong_xiaomi_mobile/touch/images/g/back.png"/></a>
+            
+            </div>
+            <div class="s_logo">
+                <a href="forum.php" >{echo cutstr(strip_tags($lang['group']),12)}</a>
+            </div>
+        
+        </div>
+
+
+
+
+
+			<!--{if $topgrouplist}-->
+				<div  class="bm group" >
+					<div class="bm_h cl group_hot">
+						<h2>{lang group_hot}</h2>
+					</div>
+					<ul class="top1">
+						<!--{loop $topgrouplist $fid $group}-->
+							<li>
+								<a href="forum.php?mod=forumdisplay&action=list&fid=$group[fid]#groupnav" >
+									<img src="$group[icon]"/>
+									<h3>$group[name]<span>$group[commoncredits]</span></h3>
+								</a>
+							</li>
+ 						<!--{/loop}-->
+					</ul>
+				</div>
+			<!--{/if}-->
+			<div class="bm group">
+				<div class="bm_h cl group_hot">
+					<h2>{lang group_categories}</h2>
+				</div>
+				<div class="bm_c">
+					<!--{loop $first $groupid $group}-->
+							<dl class="mbm sbbda">
+								<dt class="pbn">
+									<span class="y xi2"><!--{loop $group['secondlist'] $fid}--><a href="group.php?sgid=$fid">$second[$fid][name]</a> <!--{/loop}--><a href="group.php?gid=$groupid">{lang more} &rsaquo;</a></span>
+									<strong class="xs2"><a href="group.php?gid=$groupid">$group[name]</a></strong><!--{if $group[groupnum]}--><span class="xg1">($group[groupnum])</span><!--{/if}-->
+								</dt>
+								<dd class="groupdd">
+									<!--{loop $lastupdategroup[$groupid] $val}-->
+										<a href="forum.php?mod=group&fid=$val[fid]">$val[name]</a> &nbsp;&nbsp;
+									<!--{/loop}-->
+								</dd>
+							</dl>
+					<!--{/loop}-->
+				</div>
+			</div>
+
+
+
+
+
+
+<!--{template common/footer}-->

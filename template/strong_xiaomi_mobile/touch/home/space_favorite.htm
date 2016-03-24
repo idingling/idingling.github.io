@@ -1,0 +1,91 @@
+<!--{template common/header}-->
+<!-- header start -->
+<div class="s_dbdh">
+	<div class="right">
+   	 	<a href="javascript:;" onclick="do_click('#subname_list')"><img src="./template/strong_xiaomi_mobile/touch/images/g/menu.png"/></a>    
+    </div>
+    <div class="z left">
+   		 <a href="home.php?mod=space&uid=$_G[uid]&do=profile&mycenter=1" ><img src="./template/strong_xiaomi_mobile/touch/images/g/back.png"/></a>
+    </div>
+    <div class="s_logo">
+    	<a href="forum.php" >
+        <!--{if $_GET['type'] == 'forum'}-->
+		{lang favforum}
+		<!--{elseif $_GET['type'] == 'thread'}-->
+		{echo $lang['zhutishouchang'];}
+		<!--{else}-->
+		{echo $lang['wenzhangshoucang'];}
+		<!--{/if}-->
+        
+        </a>
+    </div>        
+</div>
+
+
+
+
+		<!--{if $_GET['type'] == 'forum'}-->
+		    <div id="subname_listid" class="subname_list" style="display:none;" >
+				<ul>
+					<li><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=thread">{lang favthread}</a></li>
+					<li><a href="home.php?mod=space&do=favorite&type=article">{echo $lang['wenzhangshoucang'];}</a></li>
+				</ul>
+	        </div>
+		<!--{elseif $_GET['type'] == 'thread'}-->
+			 <div id="subname_listid" class="subname_list" style="display:none;" >
+				<ul>
+					<li><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=forum">{lang favforum}</a></li>
+					<li><a href="home.php?mod=space&do=favorite&type=article">{echo $lang['wenzhangshoucang'];}</a></li>
+				</ul>
+	        </div>
+		<!--{else}-->
+		 	<div id="subname_listid" class="subname_list" style="display:none;" >
+				<ul>
+					<li><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=forum">{lang favforum}</a></li>
+					<li><a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=thread">{lang favthread}</a></li>
+				</ul>
+	        </div>
+
+		<!--{/if}-->
+
+
+<!-- main collectlist start -->
+<!--{if $_GET['type'] == 'forum'}-->
+<div class="coll_list b_radius">
+	<ul>
+		<!--{if $list}-->
+			<!--{loop $list $k $value}-->
+			<li><a href="$value[url]">$value[title]</a></li>
+			<!--{/loop}-->
+		<!--{else}-->
+		<li class="no_favorite">{lang no_favorite_yet}</li>
+		<!--{/if}-->
+
+	</ul>
+</div>
+<!--{else}-->
+<div class="threadlist">
+	<ul>
+		<!--{if $list}-->
+			<!--{loop $list $k $value}-->
+			<li><a href="$value[url]">$value[title]</a></li>
+			<!--{/loop}-->
+		<!--{else}-->
+		<li class="no_favorite">{lang no_favorite_yet}</li>
+		<!--{/if}-->
+	</ul>
+</div>
+<!--{/if}-->
+<!-- main collectlist end -->
+$multi
+
+<script type="text/javascript">
+    function do_click(spkh) {
+			$(spkh+'id').fadeToggle();
+        }
+
+
+</script>
+
+<!--{eval $nofooter = true;}-->
+<!--{template common/footer}-->

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}">
+<meta http-equiv="Cache-control" content="{if $_G['setting']['mobile'][mobilecachetime] > 0}{$_G['setting']['mobile'][mobilecachetime]}{else}no-cache{/if}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="{if !empty($metakeywords)}{echo dhtmlspecialchars($metakeywords)}{/if}" />
+<meta name="description" content="{if !empty($metadescription)}{echo dhtmlspecialchars($metadescription)} {/if},$_G['setting']['bbname']" />
+<!--{if $_G['cache']['plugin']['strong_xiaomi_mobile']}-->
+<!--{eval require_once './source/plugin/strong_xiaomi_mobile/strong_g_set.php';}-->
+<!--{/if}-->
+<title><!--{if !empty($navtitle)}-->$navtitle - <!--{/if}--><!--{if empty($nobbname)}--> $_G['setting']['bbname'] - <!--{/if}--> {lang waptitle} - Powered by Discuz!</title>
+<link rel="stylesheet" href="{$_G['siteurl']}./template/strong_xiaomi_mobile/touch/style.css" type="text/css" media="all">
+<script src="{$_G['siteurl']}{STATICURL}js/mobile/jquery-1.8.3.min.js?{VERHASH}"></script>
+
+<script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', JSPATH = '$_G[setting][jspath]';</script>
+<script src="{$_G['siteurl']}{STATICURL}js/mobile/common.js?{VERHASH}" charset="{CHARSET}"></script>
+</head>
+<!--{eval}-->
+    $language = 'language.'.currentlang().'.php';
+    include ("./template/strong_xiaomi_mobile/".$language);
+<!--{/eval}-->
+<body class="bg" onscroll="bodyscroll();" >
+<div id="weipost_sortoptions"></div>
+<style>
+.s_dbdh,#scroll,#newpm{ background:$tophdcolor;}
+.g_button,g_button a,.btn_pn_blue,.button,.button2,.btn_login .pn, .btn_register .pn{ background:$buttoncolor;}
+a:link, a:visited, a:hover{color:$fontcolor;}
+a.blue:link, a.blue:visited,a.blue:hover,.s-wztop p a{color:$linkcolor;}
+.sub_forumpost h4 em {background:$dianjingcolor;}
+
+
+
+</style>
+<!--{hook/global_header_mobile}-->
+
+<div id="wrap" >
+	<div class="c_left">
+    	<div class="menu_user" >
+        	<div class="user_img">
+            	<img src="<!--{avatar($_G[uid], big, true)}-->" />
+            </div>
+            <div class="user_tit">
+			<!--{if !$_G[uid] && !$_G['connectguest']}-->
+			<a href="member.php?mod=logging&action=login" title="{lang login}">{lang login}</a>
+			<!--{else}-->
+			<a href="home.php?mod=space&uid={$_G[uid]}&do=profile&mycenter=1">{$_G['member']['username']}</a>
+			<!--{/if}-->
+            </div>
+            <!--{if $_G[uid]}-->
+            <div class="logout">	
+            	<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+            </div>
+            <!--{/if}-->
+        </div>
+		<div class="menu_leftbox">
+            <ul>
+
+                {echo $leftmenu}
+               
+                
+            </ul>
+		</div>
+	</div>
+    
+    <!--{if $_G[member][newprompt] || $_G[member][newpm]}-->
+<a href="<!--{if $_G[member][newprompt]}-->home.php?mod=space&do=notice<!--{else}-->home.php?mod=space&do=pm<!--{/if}-->" id="newpm"><img src="template/strong_xiaomi_mobile/touch/images/s_newpm.png" ></a>
+<!--{/if}-->
+    
+    
+
+	<div class="c_right">
+		<div class="c_img">
+			<img src="<!--{avatar($_G[uid], big, true)}-->" />
+			<!--{if !$_G[uid] && !$_G['connectguest']}-->
+			<a href="member.php?mod=logging&action=login" title="{lang login}">{lang login}</a>
+			<!--{else}-->
+			<a href="home.php?mod=space&uid={$_G[uid]}&do=profile&mycenter=1">{$_G['member']['username']}</a>
+			<!--{/if}-->
+		</div>
+		<div class="c_list">
+			<ul>
+            	<li>
+					<a href="home.php?mod=space&do=notice">
+					<img src="./template/strong_xiaomi_mobile/touch/images/s_remind.png"/>
+					<p>{echo $lang['remind'];}</p>
+					</a>
+				</li>
+                <li >
+					<a href="home.php?mod=space&do=pm">
+						<img src="./template/strong_xiaomi_mobile/touch/images/s_mypm.png"/>
+						<p>{lang mypm}</p>
+					</a>
+				</li>
+				<li>
+					<a href="group.php?mod=my">
+					<img src="./template/strong_xiaomi_mobile/touch/images/s_mygroup.png"/>
+					<p>{echo $lang['mygroup'];}</p>
+					</a>
+				</li>
+				<li>
+					<a href="home.php?mod=space&uid={$_G[uid]}&do=favorite&view=me&type=thread">
+					<img src="./template/strong_xiaomi_mobile/touch/images/s_kxx.png"/>
+					<p>{lang myfavorite}</p>
+					</a>
+				</li>
+				<li>
+					<a href="home.php?mod=space&uid={$_G[uid]}&do=thread&view=me">
+						<img src="./template/strong_xiaomi_mobile/touch/images/s_knews.png"/>
+						<p>{lang mythread}</p>
+					</a>
+				</li>
+
+				<li>
+					<a href="home.php?mod=space&uid={$_G[uid]}">
+						<img src="./template/strong_xiaomi_mobile/touch/images/s_kzl.png"/>
+						<p>{lang myprofile}</p>
+					</a>
+				</li>
+				<li>
+					<a href="home.php?mod=space&uid={$_G[uid]}&do=profile&mycenter=1">
+						<img src="./template/strong_xiaomi_mobile/touch/images/s_my.png"/>
+						<p>{echo $lang['gerenzhongxin'];}</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--{if $_G[uid] && !$_G['connectguest']}-->
+			<div class="exit">
+					<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">
+					<img src="./template/strong_xiaomi_mobile/touch/images/s_exit.png"/>
+					{lang logout}</a>
+			</div>
+		<!--{/if}-->
+	</div>
+	
+
+	<div class="c_mon" id="c_mon" >
+		<div id="mcbox" class="mcbox" onClick="do_left();" style="display:none;"></div>
+
+        <div class="sub_menu">
+        	<div id="user_menu"  class="sub_menus"  style="display:none;">
+            	<ul>
+                	<li><!--{if $_G[member][newpm]}--><a href="home.php?mod=space&do=pm" class="rq">{echo $lang['new_xiaoxi'];}</a><!--{else}--><a href="home.php?mod=space&do=pm">{echo $lang['xiaoxi'];}</a><!--{/if}--></li>
+                    <li><!--{if $_G[member][newprompt]}--><a href="home.php?mod=space&do=notice" class="rq">{echo $lang['new_remind'];}</a><!--{else}--><a href="home.php?mod=space&do=notice">{echo $lang['remind'];}</a><!--{/if}--></li>
+                    <li><a href="">{echo $lang['shoucang'];}</a></li>
+                    <li style="border:none;"><a href="home.php?mod=space&uid={$_G[uid]}&do=profile&mycenter=1">{echo $lang['gerenzhongxin'];}</a></li>
+                </ul>
+            </div>
+            <div id="main_menu" class="sub_menus" style="display:none;">
+            	<ul>
+                <!--{if $_G['cache']['plugin']['strong_xiaomi_mobile'] }-->
+                    $leftmenu
+                <!--{/if}-->
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+

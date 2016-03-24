@@ -1,0 +1,83 @@
+<!--{block wx_index}-->
+<style type = "text/css">
+.wxreward{
+	margin: 10px auto;
+	width:311px;
+}
+.zztitle {
+	font-family: "Microsoft YaHei";
+	border-bottom: solid 2px #DFDFDF;
+	font-size: 18px;
+	line-height: 36px;
+	text-align: center;
+}
+
+.wxreward .titleone {
+	overflow: auto;
+}
+.wxreward .titleone a {
+	font-family: "Microsoft YaHei";
+	font-size: 18px;
+	font-weight: 500;
+	float:left;
+	width:77px;
+	height:35px;
+	line-height: 35px;
+	text-align:center;
+	outline: none;
+}
+.wxreward .listone {
+	text-align: center;
+}
+
+.wxreward .con {
+	margin: 5px;
+	clear: both;
+	width:311px;
+}
+.wxreward .con .list1{
+	display:none;
+}
+
+.wxreward .con .list2{
+	display:none;
+}
+
+.wxreward .con .list3 {
+	
+}
+
+.wxreward .con .list4{
+	display:none;
+}
+</style>
+<div class = "zztitle">{$msg}</div>
+<div class="wxreward">
+
+	<div class="titleone">
+		<a href="javascript:;">{$rmb1}</a>
+		<a href="javascript:;">{$rmb2}</a>
+		<a href="javascript:;" style = "color: #F00;">{$rmb3}</a>
+		<a href="javascript:;" class="last">{$rmb4}</a>
+	</div>
+	<div class="con">
+		<div class="listone list1">
+			<img src = "{$rmb1_url}" width = "300px" />
+		</div>
+
+		<div class="listone list2">
+			<img src = "{$rmb2_url}" width = "300px" />
+		</div>
+        
+		<div class="listone list3">
+			<img src = "{$rmb3_url}" width = "300px" />
+		</div>
+        
+		<div class="listone list4">
+			<img src = "{$rmb4_url}" width = "300px" />
+		</div>
+	</div>
+		
+</div>
+<script src="source/plugin/nciaer_wxreward/js/index.js"></script>
+<!--{/block}-->

@@ -1,0 +1,27 @@
+<!--{block btn}-->
+<link type="text/css" rel="stylesheet" href="source/plugin/muquan_h5ysp/static/style.css" />
+<!--{if $_G['setting']['version']=='X2'}-->
+<script>
+function squarestrip(str) {
+	str = str.replace('[', '%5B');
+	str = str.replace(']', '%5D');
+	return str;
+}
+</script>
+<!--{/if}-->
+<script type="text/javascript" src="source/plugin/muquan_h5ysp/static/js/script_{CHARSET}.js"></script>
+<a id="btn_h5ysp_mp3"  title="mp3" onClick="h5ysp_btn('btn_h5ysp_mp3')" href='javascript:;' >MP3</a>
+<a id="btn_h5ysp_mp4"  title="mp4" onClick="h5ysp_btn('btn_h5ysp_mp4')" href='javascript:;' >MP4</a>
+<!--{/block}-->
+
+<!--{block mp3}-->
+<audio id="html5media" src="{$url}" controls preload style="width:{$width}px;" {$autostart}></audio>
+<!--{/block}-->
+
+<!--{block mp4}-->
+<video id="html5media" poster="{$H5_YSP[poster]}" src="{$url}" width="{$w}"{if $H5_YSP[h5h]!=1}height="{$h}"{/if}controls preload></video>
+<!--{/block}-->
+
+<!--{block footer}-->
+<script src="source/plugin/muquan_h5ysp/static/js/html5media.min.js"></script>
+<!--{/block}-->

@@ -1,0 +1,94 @@
+<!--{block return}-->
+<style type="text/css">
+.mod_way p {
+	color: #999999
+}
+.mod_way p a {
+	color: #FF7400
+}
+.mod_way_item {
+	overflow: hidden;
+	display: inline;
+	float: left;
+	margin-right: 10px;
+	padding: 10px;
+	height: 58px;
+	border: 1px solid #e3e3e3;
+	background-color: #FFF;
+}
+.mod_way_item i {
+	position: absolute;
+	margin-left: -58px;
+	width: 58px;
+	height: 58px;
+}
+.mod_way_wx_info {
+	padding-left: 10px;
+}
+
+.mod_way_wx {
+	padding-left: 68px;
+}
+.mod_way_wb {
+	margin-right: 0;
+	width: 149px;
+}
+.mod_way_wx_img img {
+	width: 58px;
+}
+.mod_way_wb_sina, .mod_way_wb_tc {
+	margin-right: 5px;
+	width: 80px;
+	height: 21px;
+	text-indent: -999px;
+}
+.mod_way_wb_sina, .mod_way_wb_tc {
+	background-image: url(source/plugin/dzapp_nav/static/hdft.png);
+	background-repeat: no-repeat;
+}
+.mod_way_wb_sina {
+	background-position: -70px -30px;
+}
+.mod_way_wb_tc {
+	background-position: -160px -30px;
+}
+.mod_way_wb span, .mod_way_wb a {
+	overflow: hidden;
+	display: inline;
+	float: left;
+}
+.mod_way_wb a {
+	margin-top: 1px;
+	width: 56px;
+	height: 19px;
+	border: 1px solid #d3d6d7;
+	line-height: 19px;
+	text-align: center;
+}
+.mod_way_wb li {
+	overflow: hidden;
+	zoom: 1;
+	margin: 5px 0;
+	height: 24px;
+}
+</style>
+<div class="mod_way wp cl">
+	<!--{loop $this->dzapp_nav $value}-->
+	<!--{if $value[navtype] == 2 && $value[available]}-->
+	<div class="mod_way_item mod_way_wx" style="width: $value[width]px;">
+		<i class="mod_way_wx_img"><img src="$value[icon]"></i>
+		<div class="mod_way_wx_info">
+			<h5><a href="$value[url]" style="color:$value[color];$value[style]"{if $value[target] == 1} target="_blank"{/if}>$value[name]</a></h5>
+			<p>$value[description]</p>
+		</div>
+	</div>
+	<!--{/if}-->
+	<!--{/loop}-->
+	<div class="mod_way_item mod_way_wb">
+		<ul>
+			<li><span class="mod_way_wb_sina">{lang dzapp_nav:wb_sina}</span><a href="$this->weibo" rel="nofollow">{lang dzapp_nav:follow}</a></li>
+			<li><span class="mod_way_wb_tc">{lang dzapp_nav:wb_tc}</span><a href="$this->tqq" rel="nofollow">{lang dzapp_nav:follow}</a></li>
+		</ul>
+	</div>
+</div>
+<!--{/block}-->

@@ -1,0 +1,116 @@
+<!--{template common/header}-->
+<style>
+.c_mon{background:#fff;}
+</style>
+
+<div class="s_dbdh">
+	<div class="right">
+		<a href="javascript:;" onclick="do_click('#xiangguan');"><img id="s_more" src="{$_G['siteurl']}template/strong_xiaomi_mobile/touch/images/s_more.png"/></a>
+	</div>
+	<div class="z left">
+		<a href="javascript:;" onclick="window.history.back(-1); " class="z"><img src="{$_G['siteurl']}template/strong_xiaomi_mobile/touch/images/g/back.png"/></a>
+	</div>
+    <div class="s_logo">
+         <a  href="javascript:;" >{echo $lang['tthread'];}</a>
+    </div>
+</div>
+<div  class="g_mbx cl">
+	<div class="z">
+		<a href="{$_G['siteurl']}" class="nvhm" title="{lang homepage}">{lang homepage}</a><em>&rsaquo;</em>
+		<!--{loop $cat[ups] $value}-->
+			<a href="{echo getportalcategoryurl($value[catid])}">$value[catname]</a><em>&rsaquo;</em>
+		<!--{/loop}-->
+		<a href="{echo getportalcategoryurl($cat[catid])}">$cat[catname]</a> <em>&rsaquo;</em>
+		{lang view_content}
+	</div>
+</div>
+
+<div class="threadlist_ul" style="display:none;" id="xiangguanid">
+			<!--{if $cat[others]}-->
+				<div class="s_sgfl">
+					<h5>{lang category_related}</h5>
+					<div class="s_sgflk">
+					<!--{loop $cat[others] $value}-->
+						<a href="{echo getportalcategoryurl($value[catid])}">$value[catname]</a>
+					<!--{/loop}-->
+					</div>
+				</div>
+			<!--{/if}-->
+			<!--{if $cat[subs]}-->
+				<div class="s_sgfl">
+				<h5>{lang sub_category}</h5>
+				<!--{eval $i = 1;}-->
+					<div class="s_sgflk">
+					<!--{loop $cat[subs] $value}-->
+					<a href="{echo getportalcategoryurl($value[catid])}">$value[catname]</a>
+					<!--{/loop}-->
+					</div>
+				</div>
+			<!--{/if}-->
+</div>
+<script type="text/javascript">
+    function do_click(spkh) {
+			$(spkh+'id').fadeToggle(0);
+			if($("#xiangguanid").css('display') == 'none'){
+				$("#s_more").attr("src","{$_G['siteurl']}template/strong_xiaomi_mobile/touch/images/s_more.png");
+				$("#g_mcbox").hide();
+				}else{
+				$("#s_more").attr("src","{$_G['siteurl']}template/strong_xiaomi_mobile/touch/images/s_morek.png");
+				$("#g_mcbox").show();
+				}
+        }
+		
+		$(document).ready(function(){ 
+		¡¡¡¡$("#select_a").css("background-image","url({$_G['siteurl']}static/image/mobile/images/pic_select.png)");
+		}); 
+
+
+</script>
+<div class="s-wztop">
+				<h1 >$article[title] <!--{if $article['status'] == 1}-->({lang moderate_need})<!--{elseif $article['status'] == 2}-->({lang ignored})<!--{/if}--></h1>
+				<p><a href="home.php?mod=space&uid=$article[uid]">$article[username]</a>&nbsp;&nbsp;<span>{echo $lang['fabuyu'];}$article[dateline]</span>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="home.php?mod=spacecp&ac=favorite&type=article&id=$article[aid]&handlekey=favoritearticlehk_{$article[aid]}" style="text-align:right;float:right;">{lang favorite}</a>
+				</p>
+
+
+</div>
+<div class="pot-neirong">
+	$content[content]
+</div>
+
+<!--{if $multi}-->$multi<!--{/if}-->
+
+
+
+<div class="s-sxy">
+	<ul>
+	<!--{if $article['prearticle']}--><li><a href="{$article['prearticle']['url']}">&nbsp;&nbsp;<span style="color:#4c4c4c;">{lang pre_article}</span>&nbsp;&nbsp;{$article['prearticle']['title']}</a></li><!--{/if}-->
+	<!--{if $article['nextarticle']}--><li><a href="{$article['nextarticle']['url']}">&nbsp;&nbsp;<span style="color:#4c4c4c;">{lang next_article}</span>&nbsp;&nbsp;{$article['nextarticle']['title']}</a></li><!--{/if}-->
+	</ul>
+</div>
+<!--{ad/portal_view_xgt_mobile}-->
+		<!--{if $article['related']}-->
+		<div class="s-list-b" >
+
+				<h3>{lang view_related}</h3>
+
+
+				<ul >
+				<!--{loop $article['related'] $raid $rvalue}-->
+
+					<li> <a href="{$rvalue[uri]}">{$rvalue[title]}</a></li>
+				<!--{/loop}-->
+				</ul>
+
+		</div>
+		<!--{/if}-->
+<!--{ad/portal_view_xgb_mobile}-->
+
+
+		<!--{if $article['allowcomment']==1}-->
+			<!--{eval $data = &$article}-->
+			<!--{subtemplate portal/portal_comment}-->
+		<!--{/if}-->
+<!--{ad/portal_view_bottom_mobile}-->
+<div id="g_mcbox" class="g_mcbox" onclick="do_click('#xiangguan');" style="display:none"></div>
+<!--{template common/footer}-->

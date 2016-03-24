@@ -1,0 +1,211 @@
+
+body { background:#FAFAFA; font-family: Arial,Helvetica,sans-serif; font-size:12px;}
+a {color:#333; text-decoration: none; }
+a:hover {
+	text-decoration: none;
+}
+.header{ display:none}
+.clear {
+clear: both;
+}
+.plc .pi .message img{max-width: 100%;max-height: 100%;}
+.dsm_bgbai{background: #fff;}
+.dsm_fengexian{border-bottom: 1px solid #DfDfDf;}
+.dsm_aniu{display: inline-block;width: 100%;height: 25px;line-height: 25px;text-align: center;color: #646464;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;background: #e6e6e6;}
+/* -----------------------
+name: wrapper 
+----------------------- */
+#dsm_wp{position:absolute;width:100%;left:0px; min-height: 100%;}
+
+.cl:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .cl { zoom: 1; }
+.z{ float:left}
+.y{ float:right}
+.wps{ padding:0 10px;}
+
+
+
+/* -----------------------
+name: hd 
+----------------------- */
+#hd{width: 100%;height: 44px;display: -webkit-box;position: fixed;top: 0;z-index: 10;background: #F5F5F5;-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.1);border-bottom: 1px solid #ccc;}
+.moved-left #hd{position: static;z-index: 0;}
+.moved-left .dsm_tfixheight{display:none;}
+#hd_bot{ height:1px; width:100%;background:#eee}
+.header-title{text-align: center;
+-webkit-box-flex: 1;
+font-size: 20px;
+line-height: 44px;
+text-shadow: 0 1PX 1px #fff;
+text-overflow: ellipsis;
+overflow: hidden;}
+.header-logo{height: 45px;padding-left: 10px;width: 92px;line-height: 40px;}
+.header-logo img{vertical-align: middle;}
+.user {padding:4px 10px 0 0;position: relative;}
+.user .pm{position: absolute;top:5px;right:5px;background:#FF6600;border:2px solid #fff; height:10px; width:10px;border-radius:25px; box-shadow: 0 1px 0px #bbb;}
+.user .pm:hover{text-decoration: none;}
+.user .pic img{width:24px!important; height:24px!important;;border-radius:25px; margin-top:5px; box-shadow: 0 1px 0px #bbb;}
+
+.user .pic_no:hover span{background-position: 0 -183px;}
+.user .pic_no img{width:30px; height:31px;}
+#hd .so {display:inline-block;position: absolute;top:6px;right:45px; width:30px; height:31px; background-image: url(img/ico_header.png);
+background-repeat: no-repeat;
+-webkit-background-size: 33px auto;}
+#hd .so:hover {background-position: 0 -170px;}
+#hd .so img{width:30px; height:31px;}
+
+#hd .dsm_ttui{top: 6px;
+width: 30px;
+height: 30px;
+display: inline-block;
+position: absolute;
+background-image: url(img/ico_header.png);
+background-repeat: no-repeat;
+-webkit-background-size: 33px auto;
+background-position: 0 -66px;}
+#hd .dsm_ttui:hover{background-position: 0 -240px;}
+.dsm_tfixheight{margin-bottom: 25px;}
+
+
+/* -----------------------
+name: nv 
+----------------------- */
+
+#nv{ position: relative;height:40px;background:#FD6500; width:100%;overflow: hidden;}
+#nv a{ float:left; width: 20%; text-align:center;height:40px; font-size:15px; line-height:42px; color:#fff}
+#nv a.a{background: rgba(255, 255, 255, 0.38);}
+#nv .list{ width:15%;float:left;background:url(img/nv_pipe.png) no-repeat 100% 0;}
+#nv .list a{background:url(img/nv_list.png) no-repeat 49% 50%;height:35px;width:100%; margin:0px}
+/* -----------------------
+name: nv-list 
+----------------------- */
+
+.header-title.dsmnv_toptit span{height: 45px;display: inline-block;overflow: hidden;padding-right: 15px;}
+
+
+
+/* -----------------------
+name: 论坛页
+----------------------- */
+
+.title-t h3{ line-height:35px;font-size:12px; text-indent:10px; font-weight:normal}
+.title-t h3 a{ color:#666}
+.title-t .o{ float:right; padding-top:10px; padding-right:10px;}
+
+.list-a{}
+.list-c{margin-top:0px; overflow:hidden; padding:0}
+.list-cUl{ margin-top:-2px; padding:0 10px}
+.list-c dl{ width:100%; float:left;background:url(img/b.png) repeat-x 0 0; padding:8px 0 3px 0}
+.list-c dl dd.img{ float:left; width:45px; margin-right:10px;margin-bottom:0px;}
+.list-c dl dd.img img{ width:100%}
+.list-c dl dt{ font-size:15px; height:25px; line-height:25px; padding-bottom:1px;background:url(img/list-r.png) no-repeat 100% 50%}
+.list-c dl dt a em{ margin-left:10px;background:#0E96FF; padding:0px 5px; display:inline-block;height:14px; line-height:14px;border-radius:8px; font-size:10px; color:#fff}
+.list-c dl dd{ font-size:11px;color:#888; margin-bottom:5px;}
+/* -----------------------
+name: 论坛列表
+----------------------- */
+.dsm_forumdisplay{background: #FFF;}
+.dsm_forumdisplay li{background: url(img/b.png) repeat-x 0 0;padding: 10px 0;}
+
+.dsm_forlitit{background: #fff;border-top: 1px solid #E5E5E5;border-bottom: 1px solid #E5E5E5;}
+.dsm_forlitit h3{text-indent: 0px;margin-left: 10px;}
+.dsm_forlitit h3 a{display: inline-block;
+height: 24px;
+padding: 0 8px;
+background-color: #FF6600;
+color: #fff;
+line-height: 24px;
+font-weight: normal;}
+.dsm_forlistli{width: 100%;clear: both;overflow: hidden;background: #fff;}
+.dsm_forlistli li {position: relative;float: left;-webkit-box-sizing: border-box;width: 50%;height: 65px;padding: 10px 10px;border-bottom: 1px solid #e4e4e4;line-height: 2.125rem;overflow: hidden;}
+.dsm_forlistli li:after {
+position: absolute;
+top: 16px;
+right: 0;
+content: '';
+width: 1px;
+height: 34px;
+background-color: #f4f4f4;
+}
+.dsm_forlistli figure {display: -webkit-box;-webkit-box-align: center;}
+.dsm_forlistli img{display: block!important;width: 40px;height: 40px;border-radius: 6px;margin-right: 10px;}
+.dsm_forlistli .tit{-webkit-box-flex: 1;
+display: block;
+font-size: 15px;
+overflow: hidden;
+white-space: nowrap !important;
+text-overflow: ellipsis;font-weight: normal;}
+.dsm_forlist .num {
+font-size: 0.875rem;
+color: #ccc;
+}
+.dsm_flifatfengleimk{height: 25px;line-height: 25px;}
+
+#dsm_fdiztfl_menu,#dsm_flimorebtn_menu{border-top: 1px solid #eee;-webkit-box-shadow: 0 2px 2px rgba(168,168,168,0.02) inset;-moz-box-shadow: 0 2px 2px rgba(168,168,168,0.02) inset;box-shadow: 0 2px 2px rgba(168,168,168,0.02) inset;
+background: #F0F0F0;margin: 0 -10px;}
+#dsm_fdiztfl_menu{padding: 2px 10px;}
+#dsm_fdiztfl_menu #thread_types li a{background:#FFF;}
+#dsm_fdiztfl_menu #thread_types li a.a {background: #44ADFF;}
+#dsm_flimorebtn_menu .dsm_forlistli{background:none;}
+#dsm_flimorebtn_menu .dsm_forlistli li{border-bottom: 1px solid #e4e4e4;background: #FFF;height: 45px;}
+#dsm_flimorebtn_menu .dsm_forlistli li img{width: 25px;
+height: 25px;}
+.dsm_flifatfengleimk .y span{width: 60px;
+position: relative;
+border-right: 1px #d5d5d5 solid;
+padding: 0 10px;}
+.dsm_flifatfengleimk .y span i{background-repeat: no-repeat;
+background-image: url('img/zds-icon.png');
+height: 30px;
+width: 30px;
+background-position: 0 -330px;
+-webkit-background-size: 30px auto;
+-moz-background-size: 30px auto;
+-o-background-size: 30px auto;
+background-size: 30px auto;position: absolute;
+top: -8px;
+left: 0px;
+vertical-align: middle;}
+.dsm_flifatfengleimk .y .dsm_flifengleibtn i{
+}
+.dsm_flifatfengleimk .y .dsm_flimorebtn i{background-position: 0 -300px;}
+.dsm_flifatfengleimk .y .dsm_flifengleibtn em{font-size: 14px;
+font-weight: 500;
+margin-left: 17px;}
+#dsm_fdiztfl_menu #thread_types li{background:none;padding: 3px 0;}
+.dsm_forumdisplay .displaylist .dsm_flitieicon{border-radius: 2px;padding: 0 5px;color: #fff;line-height: 20px;text-align: center;display: inline-block;margin-right: 5px;font-size: 12px;}
+.dsm_forumdisplay .displaylist .dsm_flitieicon.dsm_flitieictop{background: #58B3FC;}
+
+/* -----------------------
+name: pt
+----------------------- */
+.pt{ padding:10px 0 ;color:#666;font-size:14px}
+.pt em{ margin:0 3px; color:#aaa}
+.pt a{ color:#666; }
+
+/* pg */
+.pgwps{background:url(img/b.png) repeat-x 0 0; padding-top:15px}
+.pg{ padding-bottom:15px;}
+.pg a,.pg strong{  margin:0 2px;height:25px;line-height:25px; padding:0 10px; color:#777; border-radius:4px; background:#E8E8E8; display:inline-block}
+.pg strong{ background:#44ADFF; color:#fff;}
+.pg label{float:right; background:none; color:#888; margin-top:3px; display:none}
+.pg label .px{ border:1px solid #ddd;border-radius:4px;box-shadow:0px 1px 3px #eee inset; font-size:11px; color:#777}
+
+
+/* -----------------------
+name: fter
+----------------------- */
+#fter{ border-top:1px solid #DfDfDf;}
+#fter .ful{padding:15px 0 15px 0;text-align:center; border-top:1px solid #fff}
+#fter .ful a{ margin:0 8px; font-size:14px; color:#666}
+#fter .ful a.z{position: absolute;left:10px; margin-top:-3px;}
+#fter .ful p{color: #aaa;}
+
+
+/* -----------------------
+用户中心
+----------------------- */
+.user_avatar{ background:url(img/user_bg.jpg) no-repeat center 0; border-bottom:1px solid #D8D8D8; padding: 20px 0 10px 0; margin-top:-2px;text-align: left;margin: 0px 0;}
+.user_avatar .dsm_homegroup{ font-weight:normal}
+.user_avatar .name{ height:25px;font-size: 18px;font-weight: 500;text-align: center;}
+.avatar_m{text-align: center;}
+

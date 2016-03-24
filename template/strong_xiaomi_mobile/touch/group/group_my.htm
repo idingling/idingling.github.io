@@ -1,0 +1,134 @@
+<!--{template common/header}-->
+<link rel="stylesheet" href="./template/strong_xiaomi_mobile/touch/group.css" type="text/css" media="all">
+<div class="s_dbdh">
+	<div class="right">
+   	 	<a href="javascript:;" ></a>    
+    </div>
+    <div class="z left">
+   		 <a href="group.php" ><img src="./template/strong_xiaomi_mobile/touch/images/g/back.png"/></a>
+    </div>
+    <div class="s_logo">
+    	<a href="forum.php" >{echo cutstr(strip_tags($lang['mygroup']),12)}</a>
+    </div>        
+</div>
+
+	<div class="my_grouphds">
+	<div class="my_grouphd">
+		<ul>
+			<li $actives[groupthread]><a href="group.php?mod=my&view=groupthread">{lang group_thread}</a></li>
+			<li $actives[mythread]><a href="group.php?mod=my&view=mythread">{lang my_thread}</a></li>
+			<li $actives[join]><a href="group.php?mod=my&view=join">{lang my_join}</a></li>
+			<li $actives[manager]><a href="group.php?mod=my&view=manager">{lang my_manage}</a></li>
+		</ul>
+	</div>
+
+
+
+		<!--{if $view == 'groupthread' || $view == 'mythread'}-->
+		<ul class="my_grouptyle">
+			<li id="ttp_all"{if empty($typeid)} class="a"{/if}><a href="group.php?mod=my&view=$view">{lang all}</a></li>
+			<!--{loop $usergroups['grouptype'] $type}-->
+				<li{if $typeid == $type['fid']} class="a"{/if}><a href="group.php?mod=my&view=$view{if $typeid != $type['fid']}&typeid=$type[fid]{/if}">$type[name]</a></li>
+			<!--{/loop}-->
+		</ul>
+
+		<!--{if $attentionthread}-->
+			<!--{loop $attentionthread $groupid $threads}-->
+				<div class="bm tl">
+					<div class="bm_h fwm10">
+						<a href="forum.php?mod=group&fid=$groupid" >{$usergroups['groups'][$groupid]}</a>
+						<a href="forum.php?mod=group&fid=$groupid" class="xi22">{lang more}...</a>
+					</div>
+
+					<div class="threadlist " >
+						<ul>
+						<!--{loop $threads $tid $thread}-->
+						<li>
+
+		                    <a href="forum.php?mod=viewthread&tid=$tid" >
+			                    <!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+									<span class=""><img src="./template/strong_xiaomi_mobile/touch/images/icon_top.png" /></span>
+								<!--{elseif $thread['digest'] > 0}-->
+									<span class=""><img src="./template/strong_xiaomi_mobile/touch/images/s_jinghua.png" /></span>
+								<!--{elseif $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+									<span class=""><img src="./template/strong_xiaomi_mobile/touch/images/icom_pic.png" /></span>
+								<!--{/if}-->
+							$thread[subject]
+							<span class="by" style="margin-top:0;"><!--{if $thread['lastposter']}-->$thread[lastposter]<!--{else}-->{lang anonymous}<!--{/if}-->
+								</span>
+							</a>
+							<span class="num">$thread[replies]/$thread[views]</span>
+
+						</li>
+						<!--{/loop}-->
+						</ul>
+
+					</div>
+				</div>
+			<!--{/loop}-->
+		<!--{else}-->
+
+
+
+			<div class="threadlist " >
+				<!--{if $groupthreadlist}-->
+				<ul>
+
+					<!--{loop $groupthreadlist $tid $thread}-->
+						<li>
+		                    <a href="forum.php?mod=viewthread&tid=$tid" >
+			                    <!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+									<span class=""><img src="./template/strong_xiaomi_mobile/touch/images/icon_top.png" /></span>
+								<!--{elseif $thread['digest'] > 0}-->
+									<span class=""><img src="./template/strong_xiaomi_mobile/touch/images/s_jinghua.png" /></span>
+								<!--{elseif $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+									<span class=""><img src="./template/strong_xiaomi_mobile/touch/images/icom_pic.png" /></span>
+								<!--{/if}-->
+							$thread[subject]
+							<span class="by" style="margin-top:0;"><!--{if $thread['lastposter']}-->$thread[lastposter]<!--{else}-->{lang anonymous}<!--{/if}-->
+								</span>
+							</a>
+							<span class="num">$thread[replies]/$thread[views]</span>
+
+						</li>
+
+					<!--{/loop}-->
+				</ul>
+				<!--{else}-->
+					<div class="emp">{lang no_related_posts}</div>
+				<!--{/if}-->
+
+		</div>
+		<!--{/if}-->
+
+	<!--{if $multipage}--><div class="pgs cl">$multipage</div><!--{/if}-->
+
+	<!--{elseif $view == 'manager' || $view == 'join'}-->
+
+		<!--{if $grouplist}-->
+			<div class="mygrouplist">
+
+
+					<ul >
+						<!--{loop $grouplist $groupid $group}-->
+						<li>
+							<a href="forum.php?mod=group&fid=$groupid" >
+							<img src="$group[icon]" alt="$group[name]" />
+							<p>$group[name]</p>
+							</a>
+						</li>
+						<!--{/loop}-->
+					</ul>
+
+			</div>
+			<!--{if $multipage}--><div class="pgs">$multipage</div><!--{/if}-->
+		<!--{else}-->
+			<div class="emp"><!--{if $view == 'manager'}-->{echo $lang['nogroup'];} <!--{elseif $view == 'join'}-->{lang no_group_join} <!--{/if}--></div>
+		<!--{/if}-->
+	<!--{/if}-->
+
+
+
+	</div>
+
+<!--{template common/footer}-->

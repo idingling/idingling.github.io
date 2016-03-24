@@ -1,0 +1,62 @@
+<!--{block return}-->
+<style type="text/css">
+.sub_nav {
+	border: 1px solid #ebebeb;
+	border-top: 0 none;
+	font-size: 14px;
+	width: 1200px;
+	margin: 0 auto;
+	font-family: Microsoft yahei;
+	border-right: 0;
+	background: #FFFFFF
+}
+.sub_nav .li {
+	padding: 10px 10px 10px 25px;
+	border-right: 1px solid #ebebeb;
+}
+.sub_nav li {
+	float: left;
+}
+.sub_nav .p {
+	float: left;
+	width: 28px;
+	color: $this->color;
+	text-align: center;
+	padding-top: 25px;
+	margin-top: 3px;
+	background-repeat: no-repeat;
+}
+.sub_nav .ul {
+	float: left;
+	display: inline;
+	margin-left: 8px;
+	line-height: 24px;
+}
+
+.sub_nav .ul li {
+	display: inline;
+	margin: 0 4px;
+	float: left
+}
+</style>
+<div class="sub_nav">
+	<div class="inner">
+		<ul class="cl">
+			<!--{loop $this->dzapp_nav $value}-->
+			<!--{if $value[navtype] == 1 && $value[available]}-->
+			<li class="li">
+				<p class="p" style="background-image: url($value[icon]);color: $value[color];$value[style]">$value[name]</p>
+				<ul class="ul" style="width: $value[width]px;">
+					<!--{loop $value[children] $children}-->
+					<!--{if $this->dzapp_nav[$children][available]}-->
+					<li><a href="$this->dzapp_nav[$children][url]" style="color:$this->dzapp_nav[$children][color];$this->dzapp_nav[$children][style]"{if $this->dzapp_nav[$children][target] == 1} target="_blank"{/if}>$this->dzapp_nav[$children][name]</a></li>
+					<!--{/if}-->
+					<!--{/loop}-->
+				</ul>
+			</li>
+			<!--{/if}-->
+			<!--{/loop}-->
+		</ul>
+	</div>
+</div>
+<!--{/block}-->
